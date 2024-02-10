@@ -6,6 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ImshabyWidget {
+        "allDays": any[];
+        "parishId": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -25,6 +29,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLImshabyWidgetElement extends Components.ImshabyWidget, HTMLStencilElement {
+    }
+    var HTMLImshabyWidgetElement: {
+        prototype: HTMLImshabyWidgetElement;
+        new (): HTMLImshabyWidgetElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -38,11 +48,16 @@ declare global {
         new (): HTMLTestWidgetElement;
     };
     interface HTMLElementTagNameMap {
+        "imshaby-widget": HTMLImshabyWidgetElement;
         "my-component": HTMLMyComponentElement;
         "test-widget": HTMLTestWidgetElement;
     }
 }
 declare namespace LocalJSX {
+    interface ImshabyWidget {
+        "allDays"?: any[];
+        "parishId"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -61,6 +76,7 @@ declare namespace LocalJSX {
         "parishId"?: string;
     }
     interface IntrinsicElements {
+        "imshaby-widget": ImshabyWidget;
         "my-component": MyComponent;
         "test-widget": TestWidget;
     }
@@ -69,6 +85,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "imshaby-widget": LocalJSX.ImshabyWidget & JSXBase.HTMLAttributes<HTMLImshabyWidgetElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "test-widget": LocalJSX.TestWidget & JSXBase.HTMLAttributes<HTMLTestWidgetElement>;
         }
