@@ -221,7 +221,8 @@ export class ImshabyWidget {
     this.scheduleInfo.find(o => o.days==el.dayNumber).massHours.map((m, n) => {
       let p = n
       p++
-      let circle = 'notok'
+      let circle = 'notok';
+
       if (m.needUpdate == false) {circle = 'ok'}
 
       let rorate = ' d-none'
