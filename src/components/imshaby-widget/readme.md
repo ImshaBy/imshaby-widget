@@ -9,7 +9,6 @@
 
 | Property   | Attribute   | Description | Type     | Default     |
 | ---------- | ----------- | ----------- | -------- | ----------- |
-| `allDays`  | --          |             | `any[]`  | `[]`        |
 | `parishId` | `parish-id` |             | `string` | `undefined` |
 
 

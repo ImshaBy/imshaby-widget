@@ -7,7 +7,6 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ImshabyWidget {
-        "allDays": any[];
         "parishId": string;
     }
     interface MyComponent {
@@ -55,7 +54,6 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ImshabyWidget {
-        "allDays"?: any[];
         "parishId"?: string;
     }
     interface MyComponent {
