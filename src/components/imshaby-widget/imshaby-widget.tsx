@@ -8,6 +8,7 @@ import { Component, Prop, State, h } from '@stencil/core';
 export class ImshabyWidget {
 
   @Prop() parishId: string;
+  @State() colorScheme: string;
   @State() allDays: any[] = [];
 
   @State() scheduleInfo: {
@@ -42,6 +43,7 @@ export class ImshabyWidget {
 
   componentWillLoad() {
     this.getScheduleFromAPI();
+    this.getColorScheme();
   }
 
   getScheduleFromAPI() {
@@ -184,6 +186,25 @@ export class ImshabyWidget {
     tab.querySelectorAll('.tab-pane').forEach(el => { el.classList.remove('show'); el.classList.remove('active'); })
     tab.querySelector(btn.dataset.bsTarget).classList.toggle('show')
     tab.querySelector(btn.dataset.bsTarget).classList.toggle('active')
+  }
+
+  private getColorScheme() : any {
+    let xhr = new XMLHttpRequest();
+    let url = 'https://content.imsha.by/api/schedule-page?locale=be&populate[0]=theme';
+    xhr.open('GET', url);
+    xhr.responseType = 'json';
+    xhr.setRequestHeader('Authorization', 'Bearer f47d0be041da384c077ed5e2c6adee196300b159b78f0b3c720780274f5215c5d75de0028e72d6b83f4065bd336d79c5007a31d62a7191f6b412017b2387ef6a9a578cf560557a37933853598be638235a785380b768065b491bfa46b024a83ea354a30e999ff604fb6d148904bf42c4374084d0746d6f2163ee077daa05f04c');
+  
+    xhr.onload = () => {
+    if (xhr.status != 200 || xhr.readyState != 4) {
+        return;
+    }
+    let r = xhr.response;
+    this.colorScheme = r.data.attributes.theme.data.attributes.color;
+    }
+  
+    xhr.send();
+
   }
 
   render() {
