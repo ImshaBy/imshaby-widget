@@ -168,7 +168,21 @@ export class ImshabyWidget {
     if (found === undefined) {return false} else {return true};
   }
 
+  private toggleNav = (event: Event) => {
+    let btn = (event.target) as HTMLElement
+    if (btn.tagName == 'SPAN') {btn = btn.parentElement}
 
+    let nav = btn.parentElement
+    nav.querySelectorAll('.daysNavLink').forEach(el => { el.classList.remove('active'); el.ariaSelected = 'false'; })
+    btn.classList.toggle('active')
+    btn.ariaSelected = 'true'
+
+    let tab = nav.parentElement.querySelector('#v-pills-tabContent')
+    tab.querySelectorAll('.tab-pane').forEach(el => { el.classList.toggle('show'); el.classList.toggle('active'); })
+    tab.querySelector(btn.dataset.bsTarget).classList.toggle('show')
+    tab.querySelector(btn.dataset.bsTarget).classList.toggle('active')
+    console.log()
+  }
 
   render() {
 
@@ -188,7 +202,7 @@ export class ImshabyWidget {
       if (el.active) {aria = 'true'} 
       
       return(
-        <button class={`nav-link daysNavLink${el.active}${el.disabled}`} id={`v-pills-d${k}`} data-bs-toggle="pill" data-bs-target={`#v-pills-d${k}-tab`} type="button" role="tab" aria-controls={`v-pills-d${k}-tab`} aria-selected={`${aria}`}>
+        <button class={`nav-link daysNavLink${el.active}${el.disabled}`} id={`v-pills-d${k}`} data-bs-toggle="pill" data-bs-target={`#v-pills-d${k}-tab`} type="button" role="tab" aria-controls={`v-pills-d${k}-tab`} aria-selected={`${aria}`} onClick={this.toggleNav}>
           <span class="daysSpan">
             {el.day}
             <br />
