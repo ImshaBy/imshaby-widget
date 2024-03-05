@@ -130,18 +130,6 @@ export class ImshabyWidget {
         disabled: disabled,
       }
     });
-
-    // console.log('Schedule was caught.');
-    // console.log('response: ')
-    // console.log(r)
-    // console.log('schedule: ')  
-    // console.log(this.scheduleInfo)
-
-    // console.log('dayNavs: ')
-    // console.log(this.daysNavs)
-
-    // console.log('allDays: ')
-    // console.log(this.allDays)
     }
     xhr.send();
   }
