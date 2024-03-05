@@ -1,7 +1,7 @@
 @import url('bootstrap.min.css');
 
-.bg-ok {background-color: #739953;}
-.bg-notok {background-color: yellow;}
+.bg-actual {background-color: #739953;}
+.bg-notactual {background-color: yellow;}
 
 .broadcastUrl {
   text-decoration: none;

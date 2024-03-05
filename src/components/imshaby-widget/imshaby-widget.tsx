@@ -181,7 +181,7 @@ export class ImshabyWidget {
     tab.querySelectorAll('.tab-pane').forEach(el => { el.classList.toggle('show'); el.classList.toggle('active'); })
     tab.querySelector(btn.dataset.bsTarget).classList.toggle('show')
     tab.querySelector(btn.dataset.bsTarget).classList.toggle('active')
-    console.log()
+    console.log(this.daysNavs)
   }
 
   render() {
@@ -235,9 +235,9 @@ export class ImshabyWidget {
     this.scheduleInfo.find(o => o.days==el.dayNumber).massHours.map((m, n) => {
       let p = n
       p++
-      let circle = 'notok';
+      let circle = 'notactual';
 
-      if (m.needUpdate == false) {circle = 'ok'}
+      if (m.needUpdate == false) {circle = 'actual'}
 
       let rorate = ' d-none'
       let online = ' d-none'
