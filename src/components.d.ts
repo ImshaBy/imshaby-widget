@@ -9,23 +9,6 @@ export namespace Components {
     interface ImshabyWidget {
         "parishId": string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
-    interface TestWidget {
-        "parishId": string;
-    }
 }
 declare global {
     interface HTMLImshabyWidgetElement extends Components.ImshabyWidget, HTMLStencilElement {
@@ -34,49 +17,16 @@ declare global {
         prototype: HTMLImshabyWidgetElement;
         new (): HTMLImshabyWidgetElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
-    interface HTMLTestWidgetElement extends Components.TestWidget, HTMLStencilElement {
-    }
-    var HTMLTestWidgetElement: {
-        prototype: HTMLTestWidgetElement;
-        new (): HTMLTestWidgetElement;
-    };
     interface HTMLElementTagNameMap {
         "imshaby-widget": HTMLImshabyWidgetElement;
-        "my-component": HTMLMyComponentElement;
-        "test-widget": HTMLTestWidgetElement;
     }
 }
 declare namespace LocalJSX {
     interface ImshabyWidget {
         "parishId"?: string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
-    interface TestWidget {
-        "parishId"?: string;
-    }
     interface IntrinsicElements {
         "imshaby-widget": ImshabyWidget;
-        "my-component": MyComponent;
-        "test-widget": TestWidget;
     }
 }
 export { LocalJSX as JSX };
@@ -84,8 +34,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "imshaby-widget": LocalJSX.ImshabyWidget & JSXBase.HTMLAttributes<HTMLImshabyWidgetElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "test-widget": LocalJSX.TestWidget & JSXBase.HTMLAttributes<HTMLTestWidgetElement>;
         }
     }
 }
