@@ -234,7 +234,7 @@ export class ImshabyWidget {
       if (m.broadcastUrl != null) {broadcastUrl = m.broadcastUrl}
 
       masses += `
-        <div class="accordion-item">
+        <div class="accordion-item" onclick="e = this.querySelector('.accordion-button'); e.ariaExpanded = !e.classList.toggle('collapsed'); (this.querySelector(e.dataset.bsTarget)).classList.toggle('show');">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${k}-${p}" aria-expanded="false" aria-controls="flush-collapse${k}-${p}"}>
             <span class="circle bg-${circle}"></span>
@@ -270,9 +270,9 @@ export class ImshabyWidget {
 
 
     return(
-    <div class={`tab-pane fade${showActive}${el.disabled}`} id={`v-pills-d${k}-tab`} role="tabpanel" aria-labelledby={`v-pills-d${k}`} tabindex="0">
+      <div class={`tab-pane fade${showActive}${el.disabled}`} id={`v-pills-d${k}-tab`} role="tabpanel" aria-labelledby={`v-pills-d${k}`} tabindex="0">
                 
-                <div class="accordion accordion-flush" id={`accordionFlush${k}`} innerHTML={masses}></div>
+      <div class="accordion accordion-flush" id={`accordionFlush${k}`} innerHTML={masses}></div>
     </div>
     )
 
