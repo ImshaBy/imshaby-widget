@@ -136,6 +136,9 @@ export class ImshabyWidget {
 
     console.log('dayNavs: ')
     console.log(this.daysNavs)
+
+    console.log('allDays: ')
+    console.log(this.allDays)
     }
     xhr.send();
   }
@@ -252,8 +255,10 @@ export class ImshabyWidget {
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${k}-${p}" aria-expanded="false" aria-controls="flush-collapse${k}-${p}"}>
             <span class="circle bg-${circle}"></span>
             <span class="massHour">${m.time}</span>
-            <span class="massRorate ms-5 ${rorate}"></span>
-            <span class="massOnline me-auto ${online}"></span>
+            <div class="ms-5 me-auto">
+              <span class="massRorate ${rorate}"></span>
+              <span class="massOnline ${online}"></span>
+            </div>
           </button>
         </h2>
         <div id="flush-collapse${k}-${p}" class="accordion-collapse collapse" data-bs-parent="accordionFlush${k}">
