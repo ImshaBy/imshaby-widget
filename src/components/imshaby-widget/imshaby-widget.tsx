@@ -95,7 +95,7 @@ export class ImshabyWidget {
         slicedArray.forEach(day => this.allDays.push( day ))
     }
 
-    this.daysNavs = this.allDays.map(a => {
+    this.daysNavs = this.allDays.map((a, i) => {
       let active = '';
       let date;
       let day = '';
@@ -115,7 +115,7 @@ export class ImshabyWidget {
       }
 
       day = this.getWeekName(a);
-      if (this.scheduleInfo[0].days == a) {
+      if (i == 0) {
         active = ' active'
       }
 
@@ -128,17 +128,17 @@ export class ImshabyWidget {
       }
     });
 
-    // console.log('Schedule was caught.');
-    // console.log('response: ')
-    // console.log(r)
-    // console.log('schedule: ')  
-    // console.log(this.scheduleInfo)
+    console.log('Schedule was caught.');
+    console.log('response: ')
+    console.log(r)
+    console.log('schedule: ')  
+    console.log(this.scheduleInfo)
 
-    // console.log('dayNavs: ')
-    // console.log(this.daysNavs)
+    console.log('dayNavs: ')
+    console.log(this.daysNavs)
 
-    // console.log('allDays: ')
-    // console.log(this.allDays)
+    console.log('allDays: ')
+    console.log(this.allDays)
     }
     xhr.send();
   }
@@ -226,13 +226,17 @@ export class ImshabyWidget {
     k++
     let showActive = ''
 
-    if (!el.disabled && !braker) {
+    if (!braker) {
       braker = true
       showActive = ' show active'
     }
 
     if (el.disabled) {
-      masses = `<span class="spanRow">На гэты дзень Імш няма.</span>`;
+      masses += `
+      <div class="container-fluid mt-3">
+        <span class="spanRow">На гэты дзень Імш няма.</span>
+      </div>
+        `;
     } else {
     this.scheduleInfo.find(o => o.days==el.dayNumber).massHours.map((m, n) => {
       let p = n
