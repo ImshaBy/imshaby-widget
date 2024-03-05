@@ -178,10 +178,9 @@ export class ImshabyWidget {
     btn.ariaSelected = 'true'
 
     let tab = nav.parentElement.querySelector('#v-pills-tabContent')
-    tab.querySelectorAll('.tab-pane').forEach(el => { el.classList.toggle('show'); el.classList.toggle('active'); })
+    tab.querySelectorAll('.tab-pane').forEach(el => { el.classList.remove('show'); el.classList.remove('active'); })
     tab.querySelector(btn.dataset.bsTarget).classList.toggle('show')
     tab.querySelector(btn.dataset.bsTarget).classList.toggle('active')
-    console.log(this.daysNavs)
   }
 
   render() {
