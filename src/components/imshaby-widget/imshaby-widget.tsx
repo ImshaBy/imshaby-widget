@@ -239,9 +239,7 @@ export class ImshabyWidget {
     </style>
   <div class="align-items-center">
     <div class="nav-pills nav-fill justify-content-center d-flex flex-row" id="v-pills-tab" role="tablist">
-
   {
-
     this.daysNavs.map((el, i) => {
       let aria ='false';
       let k = ++i
@@ -261,9 +259,7 @@ export class ImshabyWidget {
 
   </div>
     <div class="tab-content" id="v-pills-tabContent">
-
   {
-    
     this.daysNavs.map((el, i) => {
     masses = '';
     let k = i
@@ -338,25 +334,18 @@ export class ImshabyWidget {
       }) 
     }
 
-
-
     return(
       <div class={`tab-pane fade${showActive}${el.disabled}`} id={`v-pills-d${k}-tab`} role="tabpanel" aria-labelledby={`v-pills-d${k}`} tabindex="0">
                 
       <div class="accordion accordion-flush" id={`accordionFlush${k}`} innerHTML={masses}></div>
     </div>
     )
-
-    })
-  
+  })
   }
 
     </div>
     </div>
-
   </div>
   )
-
-
   }
 }
