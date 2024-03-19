@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type     | Default     |
-| ---------- | ----------- | ----------- | -------- | ----------- |
-| `parishId` | `parish-id` |             | `string` | `undefined` |
+| Property   | Attribute   | Description | Type      | Default     |
+| ---------- | ----------- | ----------- | --------- | ----------- |
+| `expanded` | `expanded`  |             | `boolean` | `true`      |
+| `parishId` | `parish-id` |             | `string`  | `undefined` |
 
 
 ----------------------------------------------
