@@ -8,6 +8,7 @@ import { Component, Prop, State, h } from '@stencil/core';
 export class ImshabyWidget {
 
   @Prop() parishId: string;
+  @Prop() expanded = true;
   @State() colorScheme: string;
   @State() colorSchemeHash: string;
   @State() allDays: any[] = [];
@@ -282,7 +283,9 @@ export class ImshabyWidget {
     this.scheduleInfo.find(o => o.days==el.dayNumber).massHours.map((m, n) => {
       let p = n
       p++
-      let circle = 'notactual';
+      let circle = 'notactual'
+      let btnExpanded = (this.expanded) ? ("") : ("collapsed")
+      let accordionExpanded = (this.expanded) ? ("show") : ("")
 
       if (m.needUpdate == false) {circle = 'actual'}
 
@@ -297,7 +300,7 @@ export class ImshabyWidget {
       masses += `
         <div class="accordion-item" onclick="e = this.querySelector('.accordion-button'); e.ariaExpanded = !e.classList.toggle('collapsed'); (this.querySelector(e.dataset.bsTarget)).classList.toggle('show');">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${k}-${p}" aria-expanded="false" aria-controls="flush-collapse${k}-${p}"}>
+          <button class="accordion-button ${btnExpanded}" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${k}-${p}" aria-expanded="false" aria-controls="flush-collapse${k}-${p}"}>
             <span class="circle bg-${circle}"></span>
             <span class="massHour">${m.time}</span>
             <div class="ms-5 me-auto">
@@ -306,7 +309,7 @@ export class ImshabyWidget {
             </div>
           </button>
         </h2>
-        <div id="flush-collapse${k}-${p}" class="accordion-collapse collapse" data-bs-parent="accordionFlush${k}">
+        <div id="flush-collapse${k}-${p}" class="accordion-collapse collapse ${accordionExpanded}" data-bs-parent="accordionFlush${k}">
           <div class="accordion-body d-flex flex-column gap-2 border-gray">
             <span class="langCode">Мова: ${m.langCode}</span>
             <span class="spanRow spanAddress">

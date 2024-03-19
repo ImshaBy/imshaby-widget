@@ -34,3 +34,13 @@
         <imshaby-widget parish-id="<insert_parish_key_here>"></imshaby-widget>
     </div>
     ...
+
+# Автоматически развернутые Имшы
+
+При импорте виджета на страницу сайта кроме ключа парафии можно указать опцию автоматически развернутых карточек. По умолчанию все карточки с Имшами развернуты (<code>expanded="true"</code>), однако если требуется, чтобы они были свернуты по умолчанию, необходимо задать параметр <code>expanded="false"</code> в свойствах импортируемого кода:
+
+    ...
+
+    <imshaby-widget parish-id="<insert_parish_key_here>" expanded="false"></imshaby-widget>
+
+    ...
