@@ -61,12 +61,10 @@ export class ImshabyWidget {
   
     xhr.onload = () => {
     if (xhr.status != 200 || xhr.readyState != 4) {
-        return;
+        return
     }
-    let r = xhr.response;
-
+    let r = xhr.response
     this.scheduleInfo = r.map(a => {
-      
       return {
         date: a.date,
         dayName: this.getWeekDay(a.date),
@@ -85,45 +83,36 @@ export class ImshabyWidget {
             broadcastUrl: e.data[0].parish.broadcastUrl
           }
         }),
-      };
-
-    });
+      }
+    })
 
     let standardDays = ['1', '2', '3', '4', '5', '6', '7']
-    
     let index = standardDays.indexOf( this.getTodayDay().getDay().toString() )
-    
     if (index !== -1) {
         let slicedArray = standardDays.slice(index)
-
         slicedArray = slicedArray.concat(standardDays.slice(0, index))
-
         slicedArray.forEach(day => this.allDays.push( day ))
     }
 
     this.daysNavs = this.allDays.map((a, i) => {
-      let active = '';
-      let date;
-      let day = '';
-      let disabled = '';
-      let newDate;
+      let active = ''
+      let date
+      let day = ''
+      let disabled = ''
+      let newDate
 
       if (this.dayInDaysExists(a)) {
         date = this.scheduleInfo.find(el => el.days == a).date
         date = Date.parse(date)
         newDate = new Date(date)
         date = newDate.getDate().toString().padStart(2, '0') + '.' + (newDate.getMonth() + 1).toString().padStart(2, '0')
-
-        
       } else {
         disabled = ' disabled'
         date = '—'
       }
 
-      day = this.getWeekName(a);
-      if (i == 0) {
-        active = ' active'
-      }
+      day = this.getWeekName(a)
+      if (i == 0) {active = ' active'}
 
       return {
         active: active,
@@ -132,21 +121,21 @@ export class ImshabyWidget {
         dayNumber: a,
         disabled: disabled,
       }
-    });
+    })
     }
-    xhr.send();
+    xhr.send()
   }
 
 
   getParishId(): string {
-    return this.parishId;
+    return this.parishId
   }
 
   private getWeekDay(date: string) : string {
-    let dateTS = Date.parse(date);
-    let days = ['Нд', 'Пн', 'Ат', 'Ср', 'Чц', 'Пт', 'Сб'];
+    let dateTS = Date.parse(date)
+    let days = ['Нд', 'Пн', 'Ат', 'Ср', 'Чц', 'Пт', 'Сб']
     
-    return days[new Date(dateTS).getDay()];
+    return days[new Date(dateTS).getDay()]
   }
 
   private getTodayDay() : Date {
@@ -157,12 +146,12 @@ export class ImshabyWidget {
 
   private getWeekName(index: any) : string {
     if (index == 7) {index = 0}
-    return ['Нд', 'Пн', 'Ат', 'Ср', 'Чц', 'Пт', 'Сб'][index];
+    return ['Нд', 'Пн', 'Ат', 'Ср', 'Чц', 'Пт', 'Сб'][index]
   }
 
   private dayInDaysExists(days: any) : any {
-    let found = this.scheduleInfo.find((el) => days == el.days);
-    if (found === undefined) {return false} else {return true};
+    let found = this.scheduleInfo.find((el) => days == el.days)
+    if (found === undefined) {return false} else {return true}
   }
 
   private toggleNav = (event: Event) => {
