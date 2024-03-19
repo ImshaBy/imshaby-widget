@@ -23,6 +23,7 @@ export class ImshabyWidget {
       duration: string,
       langCode: string,
       needUpdate: boolean,
+      lastModifiedDate: string,
       online: boolean,
       rorate: boolean,
       address: string,
@@ -77,6 +78,7 @@ export class ImshabyWidget {
             duration: e.data[0].duration,
             langCode: e.data[0].langCode,
             needUpdate: e.data[0].needUpdate,
+            lastModifiedDate: e.data[0].lastModifiedDate,
             online: e.data[0].online,
             rorate: e.data[0].rorate,
             address: e.data[0].parish.address,
@@ -325,6 +327,9 @@ export class ImshabyWidget {
             </span>
             <span class="spanRow spanComment">
               <span class="massComment">${m.info}</span>
+            </span>
+            <span class="ms-auto text-muted">
+              Последнее изменение: ${m.lastModifiedDate}
             </span>
           </div>
         </div>
