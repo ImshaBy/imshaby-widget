@@ -35,6 +35,30 @@
     </div>
     ...
 
+Также виджет можно ограничить посредством применения стилей (в т.ч. без директивы <strong>!important</strong>):
+
+    ...
+    <head>
+    ...
+
+    <style>
+      .w-50 {width: 50%;}
+      .h-50 {height: 50%;}
+      .widgetDiv {border: 1px solid mediumaquamarine;}
+    </style>
+
+    </head>
+    <body>
+
+        ...
+
+        <div class="w-50 h-50 widgetDiv">
+        <imshaby-widget parish-id="Ou1SB9uLYST505PnQ8fjTG1pd8b0qWLrWMGcS7VFFt97PMNjXsQIIM6eg8ltHVio" expanded="false"></imshaby-widget>
+        </div>
+
+        ...
+    </body>
+
 # Автоматически развернутые Имшы
 
 При импорте виджета на страницу сайта кроме ключа парафии можно указать опцию автоматически развернутых карточек. По умолчанию все карточки с Имшами развернуты (<code>expanded="true"</code>), однако если требуется, чтобы они были свернуты по умолчанию, необходимо задать параметр <code>expanded="false"</code> в свойствах импортируемого кода:
