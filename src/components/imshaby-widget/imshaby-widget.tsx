@@ -298,10 +298,10 @@ export class ImshabyWidget {
         </h2>
         <div id="flush-collapse${k}-${p}" class="accordion-collapse collapse ${accordionExpanded}" data-bs-parent="accordionFlush${k}">
           <div class="accordion-body d-flex flex-column gap-2 border-gray">
-            <span class="langCode">Мова: ${m.langCode}</span>
             <span class="spanRow spanAddress">
               <span class="address">Адрас: ${m.address}</span>
             </span>
+            <span class="langCode">Мова: ${m.langCode}</span>
             <span class="spanRow spanRorate ${rorate}">
               <span class="massRorate"></span> Раратняя Імша
             </span>
