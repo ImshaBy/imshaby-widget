@@ -63,7 +63,7 @@
         ...
 
         <div class="w-50 h-50 widgetDiv">
-        <imshaby-widget parish-id="<insert_parish_key_here>" expanded="false"></imshaby-widget>
+          <imshaby-widget parish-id="<insert_parish_key_here>" expanded="false"></imshaby-widget>
         </div>
 
         ...
