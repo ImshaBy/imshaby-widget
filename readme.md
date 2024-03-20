@@ -25,6 +25,16 @@
     </body>
     </html>
 
+# Автоматически развернутые Имшы
+
+При импорте виджета на страницу сайта кроме ключа парафии можно указать опцию автоматически развернутых карточек. По умолчанию все карточки с Имшами развернуты (<code>expanded="true"</code>), однако если требуется, чтобы они были свернуты по умолчанию, необходимо задать параметр <code>expanded="false"</code> в свойствах импортируемого кода:
+
+    ...
+
+    <imshaby-widget parish-id="<insert_parish_key_here>" expanded="false"></imshaby-widget>
+
+    ...
+
 # Ограничение по размеру
 
 По умолчанию виджет занимает максимальный размер экрана. Ограничить его можно посредством помещения компонента в div с заданными параметрами ширины и высоты:
@@ -53,18 +63,8 @@
         ...
 
         <div class="w-50 h-50 widgetDiv">
-        <imshaby-widget parish-id="Ou1SB9uLYST505PnQ8fjTG1pd8b0qWLrWMGcS7VFFt97PMNjXsQIIM6eg8ltHVio" expanded="false"></imshaby-widget>
+        <imshaby-widget parish-id="<insert_parish_key_here>" expanded="false"></imshaby-widget>
         </div>
 
         ...
     </body>
-
-# Автоматически развернутые Имшы
-
-При импорте виджета на страницу сайта кроме ключа парафии можно указать опцию автоматически развернутых карточек. По умолчанию все карточки с Имшами развернуты (<code>expanded="true"</code>), однако если требуется, чтобы они были свернуты по умолчанию, необходимо задать параметр <code>expanded="false"</code> в свойствах импортируемого кода:
-
-    ...
-
-    <imshaby-widget parish-id="<insert_parish_key_here>" expanded="false"></imshaby-widget>
-
-    ...
