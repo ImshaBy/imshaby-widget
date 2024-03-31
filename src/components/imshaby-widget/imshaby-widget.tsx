@@ -52,13 +52,12 @@ export class ImshabyWidget {
 
   getScheduleFromAPI() {
     let xhr = new XMLHttpRequest();
-    // let url = 'https://api.imsha.by/api/mass/week';
-    let url = 'https://app.nutricio.org/api/imshaby-widget';
+    let url = 'https://api.imsha.by/api/mass/week';
     xhr.open('GET', url);
     xhr.responseType = 'json';
-    //xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-    // xhr.setRequestHeader('x-show-pending', 'true');
-    // xhr.setRequestHeader('parish-week-api-key', this.getParishId());
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+    xhr.setRequestHeader('x-show-pending', 'true');
+    xhr.setRequestHeader('parish-week-api-key', this.getParishId());
 
     xhr.onload = () => {
       if (xhr.status != 200 || xhr.readyState != 4) {
