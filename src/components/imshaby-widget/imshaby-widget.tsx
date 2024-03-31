@@ -23,7 +23,8 @@ export class ImshabyWidget {
       duration: string,
       langCode: string,
       needUpdate: boolean,
-      lastModifiedDate: string,
+      lastConfirmRelevance: string,
+      updatePeriodInDays: string,
       online: boolean,
       rorate: boolean,
       address: string,
@@ -76,7 +77,8 @@ export class ImshabyWidget {
               duration: e.data[0].duration,
               langCode: e.data[0].langCode,
               needUpdate: e.data[0].needUpdate,
-              lastModifiedDate: e.data[0].lastModifiedDate,
+              lastConfirmRelevance: e.data[0].parish.lastConfirmRelevance,
+              updatePeriodInDays: e.data[0].parish.updatePeriodInDays,
               online: e.data[0].online,
               rorate: e.data[0].rorate,
               address: e.data[0].parish.address,
@@ -152,6 +154,15 @@ export class ImshabyWidget {
   private dayInDaysExists(days: any): any {
     let found = this.scheduleInfo.find((el) => days == el.days)
     if (found === undefined) { return false } else { return true }
+  }
+
+  private strToDate(dtStr): Date {
+    if (!dtStr) return null
+    let dateParts = dtStr.split("-");
+    let timeParts = dateParts[2].split(" ")[1].split(":");
+    dateParts[2] = dateParts[2].split(" ")[0];
+    // month is 0-based, that's why we need dataParts[1] - 1
+    return new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0], timeParts[0], timeParts[1], timeParts[2]);
   }
 
   private toggleNav = (event: Event) => {
@@ -273,8 +284,12 @@ export class ImshabyWidget {
                     let circle = 'notactual'
                     let btnExpanded = (this.expanded) ? ("") : ("collapsed")
                     let accordionExpanded = (this.expanded) ? ("show") : ("")
-
-                    if (m.needUpdate == false) { circle = 'actual' }
+                    
+                    let lCR = this.strToDate(m.lastConfirmRelevance)
+                    let fCR = new Date(lCR)
+                    fCR.setDate(lCR.getDate() + parseInt(m.updatePeriodInDays, 10))
+                    
+                    if (fCR.getTime() >= Date.now()) {circle = 'actual'}
 
                     let rorate = ' d-none'
                     let online = ' d-none'
@@ -314,7 +329,7 @@ export class ImshabyWidget {
               <span class="massComment">${m.info}</span>
             </span>
             <span class="ms-auto text-muted">
-              Последнее изменение: ${m.lastModifiedDate}
+              Последнее изменение: ${m.lastConfirmRelevance}
             </span>
           </div>
         </div>
