@@ -88,7 +88,9 @@ export class ImshabyWidget {
       })
 
       let standardDays = ['1', '2', '3', '4', '5', '6', '7']
-      let index = standardDays.indexOf(this.getTodayDay().getDay().toString())
+      let todaysIndex = this.getTodayDay().getDay()
+      if (todaysIndex == 0) { todaysIndex = 7 }
+      let index = standardDays.indexOf(todaysIndex.toString())
       if (index !== -1) {
         let slicedArray = standardDays.slice(index)
         slicedArray = slicedArray.concat(standardDays.slice(0, index))
