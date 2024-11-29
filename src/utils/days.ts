@@ -1,10 +1,12 @@
 export class D {
 
+  static readonly standardDays = ['1', '2', '3', '4', '5', '6', '7']
+  static readonly daysNames = ['Нд', 'Пн', 'Ат', 'Ср', 'Чц', 'Пт', 'Сб']
+
   static getWeekDay(date: string): string {
     let dateTS = Date.parse(date)
-    let days = ['Нд', 'Пн', 'Ат', 'Ср', 'Чц', 'Пт', 'Сб']
 
-    return days[new Date(dateTS).getDay()]
+    return this.daysNames[new Date(dateTS).getDay()]
   }
 
   static getToday(): Date {
@@ -15,7 +17,7 @@ export class D {
 
   static getWeekName(index: any): string {
     if (index == 7) { index = 0 }
-    return ['Нд', 'Пн', 'Ат', 'Ср', 'Чц', 'Пт', 'Сб'][index]
+    return this.daysNames[index]
   }
 
   static strToDate(dtStr): Date {
