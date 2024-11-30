@@ -18,13 +18,13 @@ export class ImshaBySchedule {
 
   @State() private srv: any;
   @State() private colorStyle: any;
-  @State() private navigaion: any;
+  @State() private navigation: any;
 
   componentWillLoad() {
     this.srv = new API({parishId: this.getParishId()})
     this.createColors()
 
-    this.navigaion = new DaysNavigation({scheduleInfo: this.srv.scheduleInfo})
+    this.navigation = new DaysNavigation({scheduleInfo: this.srv.scheduleInfo})
 
   }
 
@@ -70,9 +70,24 @@ export class ImshaBySchedule {
 
         <div class="align-items-center">
           <div class="nav-pills nav-fill justify-content-center d-flex flex-row" id="v-pills-tab" role="tablist">
+          {
+              this.navigation.daysNavs.map((el, i) => {
+                return (
+                  <day-plate
+                    active={el.active}
+                    disabled={el.disabled}
+                    aria={el.aria}
+                    day={el.day}
+                    date={el.date}
+                    k={++i}
+                  ></day-plate>
+                )
+              })
+            }
           </div>
           
           <div class="tab-content" id="v-pills-tabContent">
+
           </div>
         </div>
 
