@@ -67,7 +67,7 @@ export class ImshaBySchedule {
   render() {
     return (
       <div>
-        {this.colorStyle}
+        <div innerHTML={this.colorStyle}></div>
 
         <div class="align-items-center">
           <div class="nav-pills nav-fill justify-content-center d-flex flex-row" id="v-pills-tab" role="tablist">
@@ -93,6 +93,7 @@ export class ImshaBySchedule {
               this.navigation.daysNavs.map((el: any, i: number) => {
                 let content = ''
                 let psa = ''
+                i++
 
                 if (!this.plateBraker) {
                   this.plateBraker = true
@@ -106,7 +107,7 @@ export class ImshaBySchedule {
                     return (
                       <mass-slot
                         massInfo={massInfo} 
-                        accordionIndex={++i}
+                        accordionIndex={i}
                         massIndex={++n}
                       ></mass-slot>
                     )
@@ -115,15 +116,15 @@ export class ImshaBySchedule {
 
               return (<div
                 class={`tab-pane fade ${psa} ${el.disabled}`} 
-                id={`v-pills-d${++i}-tab`} 
-                aria-labelledby={`v-pills-d${++i}`} 
+                id={`v-pills-d${i}-tab`} 
+                aria-labelledby={`v-pills-d${i}`} 
                 role="tabpanel" tabindex="0"
               >
                 <div 
                   class="accordion accordion-flush" 
-                  id={`accordionFlush${++i}`}
+                  id={`accordionFlush${i}`} 
+                  innerHTML={content}
                 >
-                  {content}
                 </div>
               </div>)
               })

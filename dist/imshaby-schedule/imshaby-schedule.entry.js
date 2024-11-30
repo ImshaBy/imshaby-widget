@@ -237,11 +237,12 @@ const ImshaBySchedule = class {
       `;
     }
     render() {
-        return (h("div", { key: '3a50ff79da5995f9d0def236f2f75cd14d160318' }, this.colorStyle, h("div", { key: 'db86416bc2cb63a9b60df4569c8cb5e0f76f7555', class: "align-items-center" }, h("div", { key: 'b73c583bff95c5ed2c5e0849be8fd4a2f0158553', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+        return (h("div", { key: '3ce7b71029ecd293e60b94710ee65ceb8047ecea' }, h("div", { key: 'c7f76e6ba20b41c9ef04434f45c193ea41c5243c', innerHTML: this.colorStyle }), h("div", { key: 'a3aa1bd7d31adb1e0c4a0f99083a38ec169280ec', class: "align-items-center" }, h("div", { key: '36ddbbb5d6298f958e22e5666b9115b32b135eb0', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
             return (h("day-plate", { active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: 'fd8a6379b54c8730b87a3605b6a90c0e149196f7', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+        })), h("div", { key: 'be20b249a9ba9a7f6c35733cae33994facb7854d', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
             let content = '';
             let psa = '';
+            i++;
             if (!this.plateBraker) {
                 this.plateBraker = true;
                 psa = CONST.PLATE_SHOW_ACTIVE;
@@ -251,10 +252,10 @@ const ImshaBySchedule = class {
             }
             else {
                 content += this.navigation.scheduleInfo.find((o) => o.days == el.dayNumber).massHours.map((massInfo, n) => {
-                    return (h("mass-slot", { massInfo: massInfo, accordionIndex: ++i, massIndex: ++n }));
+                    return (h("mass-slot", { massInfo: massInfo, accordionIndex: i, massIndex: ++n }));
                 });
             }
-            return (h("div", { class: `tab-pane fade ${psa} ${el.disabled}`, id: `v-pills-d${++i}-tab`, "aria-labelledby": `v-pills-d${++i}`, role: "tabpanel", tabindex: "0" }, h("div", { class: "accordion accordion-flush", id: `accordionFlush${++i}` }, content)));
+            return (h("div", { class: `tab-pane fade ${psa} ${el.disabled}`, id: `v-pills-d${i}-tab`, "aria-labelledby": `v-pills-d${i}`, role: "tabpanel", tabindex: "0" }, h("div", { class: "accordion accordion-flush", id: `accordionFlush${i}`, innerHTML: content })));
         })))));
     }
 };
