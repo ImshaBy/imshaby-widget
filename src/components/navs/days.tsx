@@ -17,6 +17,7 @@ export class DayPlate {
 
 
     render() {
+        return (
         <button
             class={`nav-link daysNavLink ${this.active} ${this.disabled}`} 
             id={`v-pills-d${this.k}`} 
@@ -31,6 +32,7 @@ export class DayPlate {
                 {this.date}
             </span>
         </button>
+        )
     }
 
 }

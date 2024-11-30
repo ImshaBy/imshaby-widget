@@ -5,5 +5,5 @@ export declare class DayPlate {
     aria: string;
     day: any;
     date: any;
-    render(): void;
+    render(): any;
 }

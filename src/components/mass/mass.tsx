@@ -40,7 +40,7 @@ export class Mass {
     
     if (fCR.getTime() >= Date.now()) {this.actual = true}
 
-    return <div>
+    return (<div>
       <div class="accordion-item">
 
         <h2 class="accordion-header">
@@ -87,6 +87,6 @@ export class Mass {
         </div>
 
       </div>
-    </div>
+    </div>)
   }
 }

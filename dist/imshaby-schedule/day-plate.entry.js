@@ -13,7 +13,7 @@ const DayPlate = class {
         this.date = undefined;
     }
     render() {
-        h("button", { class: `nav-link daysNavLink ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}` }, h("span", { class: "daysSpan" }, this.day, h("br", null), this.date));
+        return (h("button", { key: '3e51ede0613795244e43e87096110fa1e781d2ce', class: `nav-link daysNavLink ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}` }, h("span", { key: '679c62dcb54781fcfafad3ead4a006f3a5918e8a', class: "daysSpan" }, this.day, h("br", { key: '627e4ac6fa66fb524d3bdbcb6ef9ccd402653050' }), this.date)));
     }
 };
 DayPlate.style = daysCss;

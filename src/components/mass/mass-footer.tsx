@@ -24,6 +24,6 @@ export class MassFooter {
         Последнее изменение: {this.lastConfirmRelevance}
       </span>
       
-    </div>
-  )}
+    </div>)
+    }
 }

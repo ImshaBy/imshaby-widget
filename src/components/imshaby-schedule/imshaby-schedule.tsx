@@ -102,7 +102,7 @@ export class ImshaBySchedule {
                 if (el.disabled) {
                   content = <no-mass></no-mass>
                 } else {
-                  content += this.srvr.scheduleInfo.find(o => o.days == el.dayNumber).massHours.map((massInfo: any, n: number) => {
+                  content += this.navigation.scheduleInfo.find((o) => o.days == el.dayNumber).massHours.map((massInfo: any, n: number) => {
                     return (
                       <mass-slot
                         massInfo={massInfo} 
