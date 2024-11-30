@@ -39,9 +39,9 @@ export namespace Components {
     }
     interface MassSlot {
         "accordionExpanded": string;
-        "accordionIndex": string;
+        "accordionIndex": number;
         "expanded": boolean;
-        "massIndex": string;
+        "massIndex": number;
         "massInfo": {
     time: string,
     info: string,
@@ -153,9 +153,9 @@ declare namespace LocalJSX {
     }
     interface MassSlot {
         "accordionExpanded"?: string;
-        "accordionIndex"?: string;
+        "accordionIndex"?: number;
         "expanded"?: boolean;
-        "massIndex"?: string;
+        "massIndex"?: number;
         "massInfo"?: {
     time: string,
     info: string,

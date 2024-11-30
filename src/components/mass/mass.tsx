@@ -9,9 +9,9 @@ import { D } from '../../utils/days';
 
 export class Mass {
 
-  @Prop() accordionIndex: string;
+  @Prop() accordionIndex: number;
   @Prop() accordionExpanded: string;
-  @Prop() massIndex: string;
+  @Prop() massIndex: number;
   @Prop() expanded = true;
 
   @Prop() massInfo: {
