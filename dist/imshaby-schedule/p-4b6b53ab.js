@@ -1,2 +1,0 @@
-class t{static getWeekDay(t){let e=Date.parse(t);return this.daysNames[new Date(e).getDay()]}static getToday(){let t=new Date;return t}static getWeekName(t){if(t==7){t=0}return this.daysNames[t]}static strToDate(t){if(!t)return null;let e=t.split("-");let a=e[2].split(" ")[1].split(":");e[2]=e[2].split(" ")[0];return new Date(+e[2],e[1]-1,+e[0],a[0],a[1],a[2])}}t.standardDays=["1","2","3","4","5","6","7"];t.daysNames=["Нд","Пн","Ат","Ср","Чц","Пт","Сб"];export{t as D};
-//# sourceMappingURL=p-4b6b53ab.js.map
