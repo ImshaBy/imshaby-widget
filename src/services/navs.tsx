@@ -1,11 +1,10 @@
-import { Prop, State } from "@stencil/core";
-import { D } from "../../utils/days";
+import { D } from "../utils/days";
 
 export class DaysNavigation {
 
-    @Prop() scheduleInfo: any;
-    @State() allDays: any[] = [];
-    @State() daysNavs: {
+    scheduleInfo: any;
+    allDays: any[] = [];
+    daysNavs: {
       day: string,
       date: any,
       disabled: string,

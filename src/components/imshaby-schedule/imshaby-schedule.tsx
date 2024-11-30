@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import { API } from '../../services/api';
-import { DaysNavigation } from '../navs/navs';
+import { DaysNavigation } from '../../services/navs';
 import { CONST } from '../../services/constants';
 
 @Component({

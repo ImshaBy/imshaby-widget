@@ -1,11 +1,10 @@
-import { State } from '@stencil/core';
 import { CONST } from './constants';
 
 export class API {
 
-  @State() scheduleInfo: any;
-  @State() colorScheme: string;
-  @State() colorSchemeHash: string;
+  scheduleInfo: any;
+  colorScheme: string;
+  colorSchemeHash: string;
 
   constructor (props) {
     this.getScheduleFromAPI(props)
