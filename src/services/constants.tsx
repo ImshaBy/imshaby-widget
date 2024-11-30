@@ -6,6 +6,8 @@ export class CONST {
     static FALSE: boolean = false;
     static NULL: any = null;
 
+    static PLATE_SHOW_ACTIVE: string = 'show active';
+
     static ERR_GETTING_SCHEDULE: string = 'Service could not obtain schedule.'
     static ERR_GETTING_COLOR_SCHEME: string = 'Service could not obtain color scheme.'
 }
