@@ -68,6 +68,13 @@ export class ImshaBySchedule {
       <div>
         {this.colorStyle}
 
+        <div class="align-items-center">
+          <div class="nav-pills nav-fill justify-content-center d-flex flex-row" id="v-pills-tab" role="tablist">
+          </div>
+          
+          <div class="tab-content" id="v-pills-tabContent">
+          </div>
+        </div>
 
       </div>
       );
