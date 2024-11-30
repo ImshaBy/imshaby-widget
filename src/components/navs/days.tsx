@@ -2,7 +2,7 @@ import { Prop, Component, h } from "@stencil/core";
 
 @Component({
     tag: 'day-plate',
-    styleUrl: 'navs.css',
+    styleUrl: 'days.css',
     shadow: true,
 })
 

@@ -32,21 +32,6 @@
   color: black;
 }
 
-.daysNavLink {
-  border-width: 1px; /* 0 1px 1px 0 */
-  border-style:  solid;
-  border-color:  #dadada;
-  border-radius: 0 !important;
-}
-.daysNavLink:hover {
-  color: white !important;
-}
-
-.daysNavLink.disabled {
-  opacity: .3;
-  pointer-events: none;
-}
-
 .circle {
   position: relative;
   width: 1.5rem;
