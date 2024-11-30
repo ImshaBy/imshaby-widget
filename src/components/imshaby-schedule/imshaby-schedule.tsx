@@ -104,11 +104,11 @@ export class ImshaBySchedule {
                 } else {
                   content += this.srvr.scheduleInfo.find(o => o.days == el.dayNumber).massHours.map((massInfo: any, n: number) => {
                     return (
-                      <mass
+                      <mass-slot
                         massInfo={massInfo} 
                         accordionIndex={++i}
                         massIndex={++n}
-                      ></mass>
+                      ></mass-slot>
                     )
                   })
                 }

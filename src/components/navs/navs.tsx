@@ -1,11 +1,5 @@
-import { Prop, Component, State } from "@stencil/core";
+import { Prop, State } from "@stencil/core";
 import { D } from "../../utils/days";
-
-@Component({
-    tag: 'day-nav',
-    styleUrl: 'navs.css',
-    shadow: true,
-})
 
 export class DaysNavigation {
 

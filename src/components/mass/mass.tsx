@@ -2,7 +2,7 @@ import { Component, State, Prop, h } from '@stencil/core';
 import { D } from '../../utils/days';
 
 @Component({
-  tag: 'mass',
+  tag: 'mass-slot',
   styleUrl: 'mass.css',
   shadow: true
 })
