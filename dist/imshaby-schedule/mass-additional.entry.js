@@ -10,7 +10,7 @@ const MassAdditional = class {
         this.broadcastUrl = '#';
     }
     render() {
-        return (h("div", { key: '6ca8917e1a1e0b620b4da1ac600b2df0e07c5edf' }, "this.rorate ? (", h("span", { key: '3cdb7765af9d31cf46c5208da93003feca058e9e', class: "spanRow spanRorate" }, h("span", { key: '06400a4ae0c33d1f2d5a96143a742bdd9badb457', class: "massRorate" }), " \u0420\u0430\u0440\u0430\u0442\u043D\u044F\u044F \u0406\u043C\u0448\u0430"), ") this.online ? (", h("span", { key: '7c323154888654f78f60a8b92ade942c338a96bc', class: "spanRow spanOnline" }, h("a", { key: 'cad3d9bb1af33e355e22da8db650d7f497d5648a', href: "{this.broadcastUrl}", class: "broadcastUrl spanRow" }, h("span", { key: '2d15a95d4825bcfcf7c4c398358889ff49391fea', class: "massOnline" }), " \u0406\u043C\u0448\u0430 online")), ")"));
+        return (h("div", { key: '6f84a40f7a2c17373c9c6d45b9ba8cc2962040f3' }, "this.rorate ? (", h("span", { key: '9f2d7b31e930b712fdbff8cdf673fb22d7b2b264', class: "spanRow spanRorate" }, h("span", { key: 'f4163eb8f42207eeaeadfb65cef9e7fde514785b', class: "massRorate" }), " \u0420\u0430\u0440\u0430\u0442\u043D\u044F\u044F \u0406\u043C\u0448\u0430"), ") this.online ? (", h("span", { key: '631c92772c7fae221e1f52b9295d6dd3bce52c1b', class: "spanRow spanOnline" }, h("a", { key: '36b6f65d259c3b829b6b30b30cb358d63f618fd4', href: "{this.broadcastUrl}", class: "broadcastUrl spanRow" }, h("span", { key: '6ae296fb0b609e60925efd1f95244e8d06a99c4e', class: "massOnline" }), " \u0406\u043C\u0448\u0430 online")), ")"));
     }
 };
 MassAdditional.style = massCss;

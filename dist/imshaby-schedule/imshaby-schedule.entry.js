@@ -200,6 +200,46 @@ const ImshaBySchedule = class {
     }
     componentWillLoad() {
         this.srvr = new API({ parishId: this.getParishId() });
+        this.srvr.scheduleInfo = [
+            {
+                "date": "12/01/2024",
+                "massHours": [
+                    {
+                        "hour": "13:00",
+                        "data": [
+                            {
+                                "id": "674b6acd153aa71779ef4dc8",
+                                "langCode": "беларуская",
+                                "parish": {
+                                    "parishId": "64e0b2622a45a27a085e77f5",
+                                    "name": "Парафія Узвышэння Святога Крыжа",
+                                    "shortName": "Узвышэння Святога Крыжа",
+                                    "imgPath": "https://storage.yandexcloud.net/strapi-bucket/avatar/_images_avatars_img-uzda.png",
+                                    "gps": null,
+                                    "address": "вул. Камуністычная, 4",
+                                    "broadcastUrl": null,
+                                    "updatePeriodInDays": 7,
+                                    "lastConfirmRelevance": "30-11-2024 22:42:57",
+                                    "needUpdate": false
+                                },
+                                "duration": 3600,
+                                "info": "Сайт парафіі: www.kosteluzda.by.\nСкласці ахвяраванне на патрэбы Касцёла акрамя як на Святой Імшы можна і праз АРІП (код паслугі: 5130141).\nПадрабязней пра расклад Святых Імш можна даведацца па тэлефоне ксяндза-пробашча (гл. на сайце).",
+                                "days": [
+                                    7
+                                ],
+                                "online": false,
+                                "rorate": false,
+                                "endDate": null,
+                                "startDate": "12/01/2024",
+                                "lastModifiedDate": "30-11-2024 22:43:09",
+                                "needUpdate": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
+        this.srvr.colorScheme = '#131819';
         this.createColors();
         this.navigation = new DaysNavigation({ scheduleInfo: this.srvr.scheduleInfo });
     }
@@ -237,9 +277,9 @@ const ImshaBySchedule = class {
       `;
     }
     render() {
-        return (h("div", { key: '3ce7b71029ecd293e60b94710ee65ceb8047ecea' }, h("div", { key: 'c7f76e6ba20b41c9ef04434f45c193ea41c5243c', innerHTML: this.colorStyle }), h("div", { key: 'a3aa1bd7d31adb1e0c4a0f99083a38ec169280ec', class: "align-items-center" }, h("div", { key: '36ddbbb5d6298f958e22e5666b9115b32b135eb0', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+        return (h("div", { key: '6d3d1bb18317f2dcc1f1e50819e3089956a4123a' }, h("div", { key: 'ded9540c339e0e910d83e4148bd0b7028b1ee612', innerHTML: this.colorStyle }), h("div", { key: 'a1ca9c6b2658a13e00917db2cc25c623c6a2b53b', class: "align-items-center" }, h("div", { key: 'c7e2441cfcea6ff3b78c4207a0a6840c5d953738', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
             return (h("day-plate", { active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: 'be20b249a9ba9a7f6c35733cae33994facb7854d', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+        })), h("div", { key: '0d1a38194f42e0ff52bd548153211bc2380f9987', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
             let content = '';
             let psa = '';
             i++;
