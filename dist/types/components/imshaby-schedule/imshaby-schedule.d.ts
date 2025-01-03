@@ -8,6 +8,7 @@ export declare class ImshaBySchedule {
     private navigation;
     private plateBraker;
     componentWillLoad(): void;
+    componentDidLoad(): void;
     private getParishId;
     private createColors;
     render(): any;

@@ -24,49 +24,11 @@ export class ImshaBySchedule {
 
   componentWillLoad() {
     this.srvr = new API({parishId: this.getParishId()})
-    this.srvr.scheduleInfo = [
-      {
-          "date": "12/01/2024",
-          "massHours": [
-              {
-                  "hour": "13:00",
-                  "data": [
-                      {
-                          "id": "674b6acd153aa71779ef4dc8",
-                          "langCode": "беларуская",
-                          "parish": {
-                              "parishId": "64e0b2622a45a27a085e77f5",
-                              "name": "Парафія Узвышэння Святога Крыжа",
-                              "shortName": "Узвышэння Святога Крыжа",
-                              "imgPath": "https://storage.yandexcloud.net/strapi-bucket/avatar/_images_avatars_img-uzda.png",
-                              "gps": null,
-                              "address": "вул. Камуністычная, 4",
-                              "broadcastUrl": null,
-                              "updatePeriodInDays": 7,
-                              "lastConfirmRelevance": "30-11-2024 22:42:57",
-                              "needUpdate": false
-                          },
-                          "duration": 3600,
-                          "info": "Сайт парафіі: www.kosteluzda.by.\nСкласці ахвяраванне на патрэбы Касцёла акрамя як на Святой Імшы можна і праз АРІП (код паслугі: 5130141).\nПадрабязней пра расклад Святых Імш можна даведацца па тэлефоне ксяндза-пробашча (гл. на сайце).",
-                          "days": [
-                              7
-                          ],
-                          "online": false,
-                          "rorate": false,
-                          "endDate": null,
-                          "startDate": "12/01/2024",
-                          "lastModifiedDate": "30-11-2024 22:43:09",
-                          "needUpdate": false
-                      }
-                  ]
-              }
-          ]
-      }
-  ]
-  this.srvr.colorScheme = '#131819'
     this.createColors()
+  }
 
-    this.navigation = new DaysNavigation({scheduleInfo: this.srvr.scheduleInfo})
+  componentDidLoad() {
+    this.navigation = new DaysNavigation({scheduleInfo: this.srvr.getScheduleInfo()})
   }
 
   private getParishId() {
