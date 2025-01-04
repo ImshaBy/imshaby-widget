@@ -13,6 +13,7 @@ export class DaysNavigation {
     }
     prepareMassData() {
         this.scheduleInfo = this.scheduleInfo.map(a => {
+            console.log(a);
             return {
                 date: a.date,
                 dayName: D.getWeekDay(a.date),

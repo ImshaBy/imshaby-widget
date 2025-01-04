@@ -27,6 +27,7 @@ export class ImshaBySchedule {
     await this.srvr.requestInfo({parishId: this.getParishId()})
     this.createColors({colorScheme: this.srvr.getColorScheme(), colorSchemeHash: this.srvr.getColorSchemeHash()})
     this.navigation = new DaysNavigation({scheduleInfo: this.srvr.getScheduleInfo()})
+    console.info(this.navigation)
   }
 
   private getParishId() {

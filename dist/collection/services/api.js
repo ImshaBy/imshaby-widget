@@ -7,7 +7,6 @@ export class API {
         ]);
     }
     getScheduleInfo() {
-        console.info(this.scheduleInfo);
         return this.scheduleInfo;
     }
     getColorScheme() {

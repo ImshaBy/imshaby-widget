@@ -1,5 +1,5 @@
 import { p as proxyCustomElement, H, h } from './p-4e89bfd8.js';
-import { D, d as defineCustomElement$3 } from './p-89ecee35.js';
+import { D, d as defineCustomElement$3 } from './p-1f9c0d30.js';
 import { d as defineCustomElement$8 } from './p-dc5954ef.js';
 import { d as defineCustomElement$7 } from './p-5009ad6b.js';
 import { d as defineCustomElement$6 } from './p-4a5c74aa.js';
@@ -41,7 +41,6 @@ class API {
         ]);
     }
     getScheduleInfo() {
-        console.info(this.scheduleInfo);
         return this.scheduleInfo;
     }
     getColorScheme() {
@@ -106,6 +105,7 @@ class DaysNavigation {
     }
     prepareMassData() {
         this.scheduleInfo = this.scheduleInfo.map(a => {
+            console.log(a);
             return {
                 date: a.date,
                 dayName: D.getWeekDay(a.date),
@@ -188,6 +188,7 @@ const ImshaBySchedule = /*@__PURE__*/ proxyCustomElement(class ImshaBySchedule e
         await this.srvr.requestInfo({ parishId: this.getParishId() });
         this.createColors({ colorScheme: this.srvr.getColorScheme(), colorSchemeHash: this.srvr.getColorSchemeHash() });
         this.navigation = new DaysNavigation({ scheduleInfo: this.srvr.getScheduleInfo() });
+        console.info(this.navigation);
     }
     getParishId() {
         return this.parishId;
@@ -223,9 +224,9 @@ const ImshaBySchedule = /*@__PURE__*/ proxyCustomElement(class ImshaBySchedule e
       `;
     }
     render() {
-        return (h("div", { key: 'afda9e718730f105fc7f72f7cb3d2fb07c13ed02' }, h("div", { key: '4dd955505afa1e40139227957ccbfed90bfc9ffe', innerHTML: this.colorStyle }), h("div", { key: 'bf2229e89ca2b6676e87228f42af25d4392265ce', class: "align-items-center" }, h("div", { key: '7123de450a70e602d0f30537632848aeec208d08', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+        return (h("div", { key: 'b164e95c62f1c75650d3a7f653a5be6f17a484e4' }, h("div", { key: 'dc8ae6cdeb9ed32128644833110292363fd5c552', innerHTML: this.colorStyle }), h("div", { key: 'e8bdb8caf9a3e5f8e4558ed3ddc558a87a513ebb', class: "align-items-center" }, h("div", { key: 'd07b4b68926e229141d41f0dc992fed5d8183ee8', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
             return (h("day-plate", { active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: '1af5092e3b5de6a9c5e1a622a104f43054432907', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+        })), h("div", { key: 'ff0bb426df2a5bd76dfa06cc8b1974cd385bc2d0', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
             let content = '';
             let psa = '';
             i++;
