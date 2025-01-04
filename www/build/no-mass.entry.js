@@ -7,7 +7,7 @@ const NoMass = class {
         registerInstance(this, hostRef);
     }
     render() {
-        return (h(Fragment, null, h("div", { key: 'adfbe5b2eb9b5799d3b9521ac70f4a4d1c020fc9', class: "container-fluid mt-3" }, h("span", { key: 'e2e778e3ca7bf7bafbac4accd41e5b2ad1256cd2', class: "spanRow" }, "\u041D\u0430 \u0433\u044D\u0442\u044B \u0434\u0437\u0435\u043D\u044C \u0406\u043C\u0448 \u043D\u044F\u043C\u0430."))));
+        return (h(Fragment, null, h("div", { key: '2fb022128abb617c6d73738848bbe89c3861eb17', class: "container-fluid mt-3" }, h("span", { key: '8df2b3748f5d61a6726e5a00258019d5ef76e7e7', class: "spanRow" }, "\u041D\u0430 \u0433\u044D\u0442\u044B \u0434\u0437\u0435\u043D\u044C \u0406\u043C\u0448 \u043D\u044F\u043C\u0430."))));
     }
 };
 NoMass.style = massCss;

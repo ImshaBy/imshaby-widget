@@ -20,7 +20,8 @@ export class ImshaBySchedule {
   @State() private srvr: any;
   @State() private colorStyle: any;
   @State() private navigation: any;
-  @State() private plateBraker: boolean = false;
+  
+  @Prop() plateBraker: boolean = false;
 
   async componentWillLoad() {
     this.srvr = new API()

@@ -13,7 +13,7 @@ const DayPlate = class {
         this.date = undefined;
     }
     render() {
-        return (h("button", { key: 'ad7e2358fddd6b0eb64390ae2caac18b3845e7ae', class: `nav-link daysNavLink ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}` }, h("span", { key: '8d7f2fa6fcb3284dc615840e420bd0d12ca90210', class: "daysSpan" }, this.day, h("br", { key: 'dc5efd3ae8d5120527312fa56742bbb6befe426b' }), this.date)));
+        return (h("button", { key: 'c262260d85828e090e4db734dba0b68d2d099cca', class: `nav-link daysNavLink ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}` }, h("span", { key: 'f39ed2af3eb7621217eba3cccb27b2a08198ec1a', class: "daysSpan" }, this.day, h("br", { key: '99d28902edec0a83fa579f7a595b35da38d99027' }), this.date)));
     }
 };
 DayPlate.style = daysCss;
