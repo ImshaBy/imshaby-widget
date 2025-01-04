@@ -9,7 +9,7 @@ const MassFooter = class {
         this.lastConfirmRelevance = undefined;
     }
     render() {
-        return (h("div", { key: '9c5ae2a442d3fea01d320f79e58afe89ae9717df' }, "!this.info ? (", h("span", { key: 'fe2dfaf07fda33fbc5f81c4a7a1c21c4aa50f77b', class: "spanRow spanComment" }, h("span", { key: '2f0be9e8816c203079b8b2697574ac22d49f07a7', class: "massComment" }, this.info)), ")", h("span", { key: '8263c77632063b8e9d9bb7657c51536b67bbc5af', class: "ms-auto text-muted" }, "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0435: ", this.lastConfirmRelevance)));
+        return (h("div", { key: '9c08f53161c3de9e872f054c7040e19b5a609499' }, "!this.info ? (", h("span", { key: '94ee6b223a4ef31a4ff6ed6f31015d5a3f1fe50b', class: "spanRow spanComment" }, h("span", { key: 'c30878488f84b32d7e21222f51c9ebdc7df045d5', class: "massComment" }, this.info)), ")", h("span", { key: '31eb26e04b5729c7d029a63368fa26701fc816f3', class: "ms-auto text-muted" }, "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0435: ", this.lastConfirmRelevance)));
     }
 };
 MassFooter.style = massCss;

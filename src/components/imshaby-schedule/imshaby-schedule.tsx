@@ -92,7 +92,7 @@ export class ImshaBySchedule {
             {
 
               this.navigation.daysNavs.map((el: any, i: number) => {
-                let content = ''
+                let content = []
                 let psa = ''
                 i++
 
@@ -102,10 +102,10 @@ export class ImshaBySchedule {
                 }
 
                 if (el.disabled) {
-                  content = <no-mass></no-mass>
+                  content.push(<no-mass></no-mass>)
                 } else {
-                  content += this.navigation.scheduleInfo.find((o) => o.dayNumber == el.dayNumber).massHours.map((massInfo: any, n: number) => {
-                    return (
+                  this.navigation.scheduleInfo.find((o) => o.dayNumber == el.dayNumber).massHours.map((massInfo: any, n: number) => {
+                    content.push(
                       <mass-slot
                         massInfo={massInfo} 
                         accordionIndex={i}

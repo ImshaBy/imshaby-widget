@@ -249,10 +249,10 @@ const ImshaBySchedule = class {
       `;
     }
     render() {
-        return (h("div", { key: '9882fbad8179fcc97df016146ec69e6db94487d6' }, h("div", { key: '64026de4f81a9fc875d6ac1b48ea380a37746fe3', innerHTML: this.colorStyle }), h("div", { key: 'df46473f208a7ef180584878dbc4b4c748e8f980', class: "align-items-center" }, h("div", { key: '9a7346a79b832fc979d3337a5683e27428128c28', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+        return (h("div", { key: '54ff9c3d8d4690e00d5f7de6ee2a9470622f0ed1' }, h("div", { key: '7f782a094d3cedabad743103296665d24a7dfbf3', innerHTML: this.colorStyle }), h("div", { key: '3961b0ebf3bf4e4f651a8767b8ba4ba5b2e26e5e', class: "align-items-center" }, h("div", { key: '9f282c422512d331f2947bb47f583717609530f0', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
             return (h("day-plate", { active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: '547cdd488b654de1a944f67b9465e2857bd9b9c0', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
-            let content = '';
+        })), h("div", { key: 'b1ad4fda6d0aa0e2a9bf7558cc1415db9062272d', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+            let content = [];
             let psa = '';
             i++;
             if (!this.plateBraker) {
@@ -260,11 +260,11 @@ const ImshaBySchedule = class {
                 psa = CONST.PLATE_SHOW_ACTIVE;
             }
             if (el.disabled) {
-                content = h("no-mass", null);
+                content.push(h("no-mass", null));
             }
             else {
-                content += this.navigation.scheduleInfo.find((o) => o.dayNumber == el.dayNumber).massHours.map((massInfo, n) => {
-                    return (h("mass-slot", { massInfo: massInfo, accordionIndex: i, massIndex: ++n }));
+                this.navigation.scheduleInfo.find((o) => o.dayNumber == el.dayNumber).massHours.map((massInfo, n) => {
+                    content.push(h("mass-slot", { massInfo: massInfo, accordionIndex: i, massIndex: ++n }));
                 });
             }
             return (h("div", { class: `tab-pane fade ${psa} ${el.disabled}`, id: `v-pills-d${i}-tab`, "aria-labelledby": `v-pills-d${i}`, role: "tabpanel", tabindex: "0" }, h("div", { class: "accordion accordion-flush", id: `accordionFlush${i}` }, content)));

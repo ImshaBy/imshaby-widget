@@ -10,7 +10,7 @@ const MassAdditional = class {
         this.broadcastUrl = '#';
     }
     render() {
-        return (h("div", { key: '6f84a40f7a2c17373c9c6d45b9ba8cc2962040f3' }, "this.rorate ? (", h("span", { key: '9f2d7b31e930b712fdbff8cdf673fb22d7b2b264', class: "spanRow spanRorate" }, h("span", { key: 'f4163eb8f42207eeaeadfb65cef9e7fde514785b', class: "massRorate" }), " \u0420\u0430\u0440\u0430\u0442\u043D\u044F\u044F \u0406\u043C\u0448\u0430"), ") this.online ? (", h("span", { key: '631c92772c7fae221e1f52b9295d6dd3bce52c1b', class: "spanRow spanOnline" }, h("a", { key: '36b6f65d259c3b829b6b30b30cb358d63f618fd4', href: "{this.broadcastUrl}", class: "broadcastUrl spanRow" }, h("span", { key: '6ae296fb0b609e60925efd1f95244e8d06a99c4e', class: "massOnline" }), " \u0406\u043C\u0448\u0430 online")), ")"));
+        return (h("div", { key: '9b6a3a18d3788c3bc9a1e584f2405230acdf4364' }, "this.rorate ? (", h("span", { key: '4ec14632d464f23e7cb0b88ca5aa6a67b854877d', class: "spanRow spanRorate" }, h("span", { key: '6f5e61afa3a8f116f3c0451860547fa8c6186629', class: "massRorate" }), " \u0420\u0430\u0440\u0430\u0442\u043D\u044F\u044F \u0406\u043C\u0448\u0430"), ") this.online ? (", h("span", { key: 'e92807257be83c83ff0290e5b5bb59957a03219c', class: "spanRow spanOnline" }, h("a", { key: '7cd6b37b5501fd3ff45382bb1c28f82ce02552be', href: "{this.broadcastUrl}", class: "broadcastUrl spanRow" }, h("span", { key: 'd18d0c611add880be18a24baff56e87eaf71e7d2', class: "massOnline" }), " \u0406\u043C\u0448\u0430 online")), ")"));
     }
 };
 MassAdditional.style = massCss;
