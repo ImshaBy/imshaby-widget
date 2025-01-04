@@ -5,13 +5,22 @@ import { d as defineCustomElement$2 } from './p-8970cf9f.js';
 import { d as defineCustomElement$1 } from './p-1770ced4.js';
 
 class D {
-    static getWeekDay(date) {
+    static parseDateFromString(date) {
         let dateTS = Date.parse(date);
-        return this.daysNames[new Date(dateTS).getDay()];
+        return new Date(dateTS);
     }
     static getToday() {
         let today = new Date();
         return today;
+    }
+    static getDayIndex(date) {
+        let dateObject = this.parseDateFromString(date);
+        let index = (dateObject.getDay() == 0) ? (7) : (dateObject.getDay());
+        return index.toString();
+    }
+    static getWeekDay(date) {
+        let index = this.getDayIndex(date);
+        return this.daysNames[index];
     }
     static getWeekName(index) {
         if (index == 7) {
@@ -104,4 +113,4 @@ defineCustomElement();
 
 export { D, Mass as M, defineCustomElement as d };
 
-//# sourceMappingURL=p-1f9c0d30.js.map
+//# sourceMappingURL=p-8dedc37c.js.map

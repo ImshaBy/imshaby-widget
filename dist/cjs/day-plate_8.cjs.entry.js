@@ -108,13 +108,22 @@ class API {
 }
 
 class D {
-    static getWeekDay(date) {
+    static parseDateFromString(date) {
         let dateTS = Date.parse(date);
-        return this.daysNames[new Date(dateTS).getDay()];
+        return new Date(dateTS);
     }
     static getToday() {
         let today = new Date();
         return today;
+    }
+    static getDayIndex(date) {
+        let dateObject = this.parseDateFromString(date);
+        let index = (dateObject.getDay() == 0) ? (7) : (dateObject.getDay());
+        return index.toString();
+    }
+    static getWeekDay(date) {
+        let index = this.getDayIndex(date);
+        return this.daysNames[index];
     }
     static getWeekName(index) {
         if (index == 7) {
@@ -152,7 +161,7 @@ class DaysNavigation {
             return {
                 date: a.date,
                 dayName: D.getWeekDay(a.date),
-                dayNumber: a.date.getDay(),
+                dayNumber: D.getDayIndex(a.date),
                 massHours: a.massHours.map(e => {
                     return {
                         time: e.hour,

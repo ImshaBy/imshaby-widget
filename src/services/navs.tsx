@@ -29,7 +29,7 @@ export class DaysNavigation {
         return {
           date: a.date,
           dayName: D.getWeekDay(a.date),
-          dayNumber: a.date.getDay(),
+          dayNumber: D.getDayIndex(a.date),
           massHours: a.massHours.map(e => {
             return {
               time: e.hour,

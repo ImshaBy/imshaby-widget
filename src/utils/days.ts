@@ -17,8 +17,9 @@ export class D {
 
   static getDayIndex(date: string): string {
     let dateObject = this.parseDateFromString(date)
+    let index = (dateObject.getDay() == 0) ? (7) : (dateObject.getDay())
 
-    return dateObject.getDay().toString()
+    return index.toString()
   }
 
   static getWeekDay(date: string): string {

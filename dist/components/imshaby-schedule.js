@@ -1,5 +1,5 @@
 import { p as proxyCustomElement, H, h } from './p-4e89bfd8.js';
-import { D, d as defineCustomElement$3 } from './p-1f9c0d30.js';
+import { D, d as defineCustomElement$3 } from './p-8dedc37c.js';
 import { d as defineCustomElement$8 } from './p-dc5954ef.js';
 import { d as defineCustomElement$7 } from './p-5009ad6b.js';
 import { d as defineCustomElement$6 } from './p-4a5c74aa.js';
@@ -108,7 +108,7 @@ class DaysNavigation {
             return {
                 date: a.date,
                 dayName: D.getWeekDay(a.date),
-                dayNumber: a.date.getDay(),
+                dayNumber: D.getDayIndex(a.date),
                 massHours: a.massHours.map(e => {
                     return {
                         time: e.hour,
