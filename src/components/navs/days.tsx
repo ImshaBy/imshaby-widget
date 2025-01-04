@@ -30,7 +30,6 @@ export class DayPlate {
         btn.ariaSelected = 'true'
         btn.removeAttribute('tabindex')
 
-        console.log(btn)
         let tabs = btn.parentElement.parentElement.parentElement.querySelector('#v-pills-tabContent')
         Array.from(tabs.children).forEach(el => {
             el.classList.remove('show', 'active')

@@ -19,7 +19,6 @@ const DayPlate = class {
             btn.classList.add('active');
             btn.ariaSelected = 'true';
             btn.removeAttribute('tabindex');
-            console.log(btn);
             let tabs = btn.parentElement.parentElement.parentElement.querySelector('#v-pills-tabContent');
             Array.from(tabs.children).forEach(el => {
                 el.classList.remove('show', 'active');
@@ -34,7 +33,7 @@ const DayPlate = class {
         this.date = undefined;
     }
     render() {
-        return (h("button", { key: 'a5dbd3a91649f42fd6da37c811bd905b87b928d7', class: `nav-link daysNavLink ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}`, onClick: this.toggleDayNavButton }, h("span", { key: '8a805d192b74dd49df4a9f7eb93feea82227f6fd', class: "daysSpan" }, this.day, h("br", { key: '7ce537f19012ae8865d4b190cf0aed4bf84a7046' }), this.date)));
+        return (h("button", { key: '664fa5e9a7f9a598035d0a61a91c092472fdf7cc', class: `nav-link daysNavLink ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}`, onClick: this.toggleDayNavButton }, h("span", { key: 'd95ed14e4851615ca921425ced977f3aef526b94', class: "daysSpan" }, this.day, h("br", { key: '283e13bcf0f958889ddbaa936fdcf82cfdb560a1' }), this.date)));
     }
 };
 DayPlate.style = daysCss;
