@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, h } from './p-2da27d48.js';
+import { p as proxyCustomElement, H, h } from './p-4e89bfd8.js';
 
 const daysCss = ".daysNavLink{border-width:1px;border-style:solid;border-color:#dadada;border-radius:0 !important}.daysNavLink:hover{color:white !important}.daysNavLink.disabled{opacity:.3;pointer-events:none}";
 const DayPlateStyle0 = daysCss;
@@ -44,4 +44,4 @@ defineCustomElement();
 
 export { DayPlate as D, defineCustomElement as d };
 
-//# sourceMappingURL=p-5b4d6c01.js.map
+//# sourceMappingURL=p-dc5954ef.js.map

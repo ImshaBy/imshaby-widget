@@ -1,4 +1,4 @@
-import { M as Mass, d as defineCustomElement$1 } from './p-c763fd6a.js';
+import { M as Mass, d as defineCustomElement$1 } from './p-89ecee35.js';
 
 const MassSlot = Mass;
 const defineCustomElement = defineCustomElement$1;

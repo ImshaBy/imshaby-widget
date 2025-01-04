@@ -1,15 +1,27 @@
 import { CONST } from "./constants";
 export class API {
-    constructor(props) {
-        this.getScheduleFromAPI(props);
-        this.getColorSchemeFromAPI();
+    async requestInfo(props) {
+        await Promise.all([
+            this.getScheduleFromAPI(props),
+            this.getColorSchemeFromAPI()
+        ]);
+    }
+    getScheduleInfo() {
+        console.info(this.scheduleInfo);
+        return this.scheduleInfo;
+    }
+    getColorScheme() {
+        return this.colorScheme;
+    }
+    getColorSchemeHash() {
+        return this.colorSchemeHash;
     }
     getScheduleFromAPI(props) {
         const fetchHeaders = new Headers();
         fetchHeaders.append('Content-Type', 'application/json; charset=utf-8');
         fetchHeaders.append('x-show-pending', 'true');
         fetchHeaders.append('parish-week-api-key', props.parishId);
-        fetch(CONST.API_MASS_URL, {
+        return fetch(CONST.API_MASS_URL, {
             method: 'GET',
             headers: fetchHeaders,
         })
@@ -18,6 +30,7 @@ export class API {
         })
             .then((response) => {
             this.scheduleInfo = response;
+            return true;
         })
             .catch((error) => {
             throw new Error(CONST.ERR_GETTING_SCHEDULE + " [" + error + "]");
@@ -26,7 +39,7 @@ export class API {
     getColorSchemeFromAPI() {
         const fetchHeaders = new Headers();
         fetchHeaders.append('Authorization', 'Bearer f47d0be041da384c077ed5e2c6adee196300b159b78f0b3c720780274f5215c5d75de0028e72d6b83f4065bd336d79c5007a31d62a7191f6b412017b2387ef6a9a578cf560557a37933853598be638235a785380b768065b491bfa46b024a83ea354a30e999ff604fb6d148904bf42c4374084d0746d6f2163ee077daa05f04c');
-        fetch(CONST.API_COLOR_SCHEME_URL, {
+        return fetch(CONST.API_COLOR_SCHEME_URL, {
             method: 'GET',
             headers: fetchHeaders,
             redirect: "follow",

@@ -2,7 +2,10 @@ export declare class API {
     scheduleInfo: any;
     colorScheme: string;
     colorSchemeHash: string;
-    constructor(props: any);
+    requestInfo(props: any): Promise<void>;
+    getScheduleInfo(): any;
+    getColorScheme(): string;
+    getColorSchemeHash(): string;
     private getScheduleFromAPI;
     private getColorSchemeFromAPI;
 }
