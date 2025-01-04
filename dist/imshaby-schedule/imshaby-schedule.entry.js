@@ -249,9 +249,9 @@ const ImshaBySchedule = class {
       `;
     }
     render() {
-        return (h("div", { key: '574f5cc535a7ae4c44ce2a12ec0cadfa04cd398d' }, h("div", { key: 'f85a3e9959d47aa71c47320987ddf249ad1e588c', innerHTML: this.colorStyle }), h("div", { key: '83c97c9fc1606bae49dd000740c7a673d841a25e', class: "align-items-center" }, h("div", { key: 'b7ae0cc5373a2fb69de1dba5b9231c86b4b9bd28', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+        return (h("div", { key: '9882fbad8179fcc97df016146ec69e6db94487d6' }, h("div", { key: '64026de4f81a9fc875d6ac1b48ea380a37746fe3', innerHTML: this.colorStyle }), h("div", { key: 'df46473f208a7ef180584878dbc4b4c748e8f980', class: "align-items-center" }, h("div", { key: '9a7346a79b832fc979d3337a5683e27428128c28', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
             return (h("day-plate", { active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: 'fb8281ca6fb0527fe538b123c0f2aedbafb992e1', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+        })), h("div", { key: '547cdd488b654de1a944f67b9465e2857bd9b9c0', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
             let content = '';
             let psa = '';
             i++;
@@ -267,7 +267,7 @@ const ImshaBySchedule = class {
                     return (h("mass-slot", { massInfo: massInfo, accordionIndex: i, massIndex: ++n }));
                 });
             }
-            return (h("div", { class: `tab-pane fade ${psa} ${el.disabled}`, id: `v-pills-d${i}-tab`, "aria-labelledby": `v-pills-d${i}`, role: "tabpanel", tabindex: "0" }, h("div", { class: "accordion accordion-flush", id: `accordionFlush${i}`, innerHTML: content })));
+            return (h("div", { class: `tab-pane fade ${psa} ${el.disabled}`, id: `v-pills-d${i}-tab`, "aria-labelledby": `v-pills-d${i}`, role: "tabpanel", tabindex: "0" }, h("div", { class: "accordion accordion-flush", id: `accordionFlush${i}` }, content)));
         })))));
     }
 };

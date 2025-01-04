@@ -124,8 +124,8 @@ export class ImshaBySchedule {
                 <div 
                   class="accordion accordion-flush" 
                   id={`accordionFlush${i}`} 
-                  innerHTML={content}
                 >
+                  {content}
                 </div>
               </div>)
               })
