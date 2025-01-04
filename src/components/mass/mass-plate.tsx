@@ -3,7 +3,7 @@ import { Component, Prop, h, Fragment } from '@stencil/core';
 @Component({
   tag: 'mass-plate',
   styleUrl: 'mass.css',
-  shadow: true
+  shadow: false
 })
 
 export class MassPlate {

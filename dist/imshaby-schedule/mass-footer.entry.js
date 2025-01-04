@@ -9,7 +9,7 @@ const MassFooter = class {
         this.lastConfirmRelevance = undefined;
     }
     render() {
-        return (h(Fragment, null, (this.info != null) ? (h("span", { class: "spanRow spanComment" }, h("span", { class: "massComment" }, this.info))) : (null), h("span", { key: 'ffac18ef773d1d251c75e47099383f4434650c0a', class: "ms-auto text-muted" }, "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0435: ", this.lastConfirmRelevance)));
+        return (h(Fragment, null, (this.info != null) ? (h("span", { class: "spanRow spanComment" }, h("span", { class: "massComment" }, this.info))) : (null), h("span", { key: '9bbb119c78a0e966e0b03da6d89844cdc3f1387c', class: "ms-auto text-muted" }, "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0435: ", this.lastConfirmRelevance)));
     }
 };
 MassFooter.style = massCss;

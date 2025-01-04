@@ -3,7 +3,7 @@ import { Component, h, Fragment } from '@stencil/core';
 @Component({
   tag: 'no-mass',
   styleUrl: 'mass.css',
-  shadow: true
+  shadow: false
 })
 
 export class NoMass {

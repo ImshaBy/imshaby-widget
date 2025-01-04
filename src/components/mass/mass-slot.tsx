@@ -4,7 +4,7 @@ import { D } from '../../utils/days';
 @Component({
   tag: 'mass-slot',
   styleUrl: 'mass.css',
-  shadow: true
+  shadow: false
 })
 
 export class MassSlot {
