@@ -1,5 +1,5 @@
 export class CONST {
-    static API_MASS_URL: string = 'https://api.imsha.by/api/mass/week';
+    static API_MASS_URL: string = 'https://app.nutricio.org/api/imshaby-widget-test-data';
     static API_COLOR_SCHEME_URL: string = 'https://content.imsha.by/api/schedule-page?locale=be&populate[0]=theme';
 
     static TRUE: boolean = true;

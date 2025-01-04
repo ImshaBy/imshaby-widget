@@ -53,7 +53,7 @@ const bootstrap_bundle_min = bootstrap_bundle_min$1.exports;
 
 class CONST {
 }
-CONST.API_MASS_URL = 'https://api.imsha.by/api/mass/week';
+CONST.API_MASS_URL = 'https://app.nutricio.org/api/imshaby-widget-test-data';
 CONST.API_COLOR_SCHEME_URL = 'https://content.imsha.by/api/schedule-page?locale=be&populate[0]=theme';
 CONST.TRUE = true;
 CONST.FALSE = false;
@@ -249,9 +249,9 @@ const ImshaBySchedule = class {
       `;
     }
     render() {
-        return (h("div", { key: '23ceefc56f2a01acd85fb71c99c8fc3b0b848ad5' }, h("div", { key: '6b7a6fe4a72194789757d0f62b724091f22b05bf', innerHTML: this.colorStyle }), h("div", { key: 'e9dcd19cdcda596feb244aa92537f24702c985f6', class: "align-items-center" }, h("div", { key: '0001625dd3c33386b59047ae613dd356f0342b5e', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+        return (h("div", { key: '574f5cc535a7ae4c44ce2a12ec0cadfa04cd398d' }, h("div", { key: 'f85a3e9959d47aa71c47320987ddf249ad1e588c', innerHTML: this.colorStyle }), h("div", { key: '83c97c9fc1606bae49dd000740c7a673d841a25e', class: "align-items-center" }, h("div", { key: 'b7ae0cc5373a2fb69de1dba5b9231c86b4b9bd28', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
             return (h("day-plate", { active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: '7d48d41b6cef8f37f2c59e73a31183a487094b84', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+        })), h("div", { key: 'fb8281ca6fb0527fe538b123c0f2aedbafb992e1', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
             let content = '';
             let psa = '';
             i++;
