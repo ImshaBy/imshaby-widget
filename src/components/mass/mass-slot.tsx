@@ -7,7 +7,7 @@ import { D } from '../../utils/days';
   shadow: true
 })
 
-export class Mass {
+export class MassSlot {
 
   @Prop() accordionIndex: number;
   @Prop() accordionExpanded: string;

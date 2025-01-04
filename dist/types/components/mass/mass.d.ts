@@ -1,4 +1,4 @@
-export declare class Mass {
+export declare class MassSlot {
     accordionIndex: number;
     accordionExpanded: string;
     massIndex: number;
