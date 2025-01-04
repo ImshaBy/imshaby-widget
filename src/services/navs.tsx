@@ -19,8 +19,8 @@ export class DaysNavigation {
     }
 
 
-    private dayInDaysExists(days: any): any {
-        let found = this.scheduleInfo.find((el) => days == el.days)
+    private dayInDaysExists(dayNumber: any): any {
+        let found = this.scheduleInfo.find((el) => dayNumber == el.dayNumber)
         return (found === undefined) ? false : true
     }
 
@@ -29,7 +29,7 @@ export class DaysNavigation {
         return {
           date: a.date,
           dayName: D.getWeekDay(a.date),
-          days: a.massHours[0].data[0].days[0],
+          dayNumber: a.date.getDay(),
           massHours: a.massHours.map(e => {
             return {
               time: e.hour,
@@ -69,7 +69,7 @@ export class DaysNavigation {
         let newDate: Date
 
         if (this.dayInDaysExists(a)) {
-          newDate = new Date( Date.parse( this.scheduleInfo.find(el => el.days == a).date ) )
+          newDate = new Date( Date.parse( this.scheduleInfo.find(el => el.dayNumber == a).date ) )
           date = newDate.getDate().toString().padStart(2, '0') + '.' + (newDate.getMonth() + 1).toString().padStart(2, '0')
         } else {
           disabled = 'disabled'
