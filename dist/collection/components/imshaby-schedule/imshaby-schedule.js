@@ -68,7 +68,7 @@ export class ImshaBySchedule {
                 content = h("no-mass", null);
             }
             else {
-                content += this.navigation.scheduleInfo.find((o) => o.days == el.dayNumber).massHours.map((massInfo, n) => {
+                content += this.navigation.scheduleInfo.find((o) => o.dayNumber == el.dayNumber).massHours.map((massInfo, n) => {
                     return (h("mass-slot", { massInfo: massInfo, accordionIndex: i, massIndex: ++n }));
                 });
             }

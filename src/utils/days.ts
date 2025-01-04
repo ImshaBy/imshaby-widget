@@ -3,16 +3,28 @@ export class D {
   static readonly standardDays = ['1', '2', '3', '4', '5', '6', '7']
   static readonly daysNames = ['Нд', 'Пн', 'Ат', 'Ср', 'Чц', 'Пт', 'Сб']
 
-  static getWeekDay(date: string): string {
+  static parseDateFromString(date: string): Date {
     let dateTS = Date.parse(date)
 
-    return this.daysNames[new Date(dateTS).getDay()]
+    return new Date(dateTS)
   }
 
   static getToday(): Date {
     let today = new Date()
 
     return today
+  }
+
+  static getDayIndex(date: string): string {
+    let dateObject = this.parseDateFromString(date)
+
+    return dateObject.getDay().toString()
+  }
+
+  static getWeekDay(date: string): string {
+    let index = this.getDayIndex(date)
+
+    return this.daysNames[index]
   }
 
   static getWeekName(index: any): string {

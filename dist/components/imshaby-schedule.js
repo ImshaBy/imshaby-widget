@@ -99,17 +99,16 @@ class DaysNavigation {
         this.prepareMassData();
         this.prepareNavs();
     }
-    dayInDaysExists(days) {
-        let found = this.scheduleInfo.find((el) => days == el.days);
+    dayInDaysExists(dayNumber) {
+        let found = this.scheduleInfo.find((el) => dayNumber == el.dayNumber);
         return (found === undefined) ? false : true;
     }
     prepareMassData() {
         this.scheduleInfo = this.scheduleInfo.map(a => {
-            console.log(a);
             return {
                 date: a.date,
                 dayName: D.getWeekDay(a.date),
-                days: a.massHours[0].data[0].days[0],
+                dayNumber: a.date.getDay(),
                 massHours: a.massHours.map(e => {
                     return {
                         time: e.hour,
@@ -146,7 +145,7 @@ class DaysNavigation {
             let disabled = '';
             let newDate;
             if (this.dayInDaysExists(a)) {
-                newDate = new Date(Date.parse(this.scheduleInfo.find(el => el.days == a).date));
+                newDate = new Date(Date.parse(this.scheduleInfo.find(el => el.dayNumber == a).date));
                 date = newDate.getDate().toString().padStart(2, '0') + '.' + (newDate.getMonth() + 1).toString().padStart(2, '0');
             }
             else {
@@ -238,7 +237,7 @@ const ImshaBySchedule = /*@__PURE__*/ proxyCustomElement(class ImshaBySchedule e
                 content = h("no-mass", null);
             }
             else {
-                content += this.navigation.scheduleInfo.find((o) => o.days == el.dayNumber).massHours.map((massInfo, n) => {
+                content += this.navigation.scheduleInfo.find((o) => o.dayNumber == el.dayNumber).massHours.map((massInfo, n) => {
                     return (h("mass-slot", { massInfo: massInfo, accordionIndex: i, massIndex: ++n }));
                 });
             }
