@@ -15,6 +15,19 @@ export class DayPlate {
     @Prop() day: any;
     @Prop() date: any;
 
+    private toggleDayNavButton = (event: Event) => {
+        let btn = (event.target) as HTMLElement
+        if (btn.tagName == 'SPAN') { btn = btn.parentElement }
+
+        Array.from(btn.parentElement.parentElement.children).forEach(el => {
+            el = el.querySelector('.daysNavLink')
+            el.classList.remove('active')
+            el.ariaSelected = 'false'
+        })
+
+        btn.classList.add('active')
+        btn.ariaSelected = 'true'
+    }
 
     render() {
         return (
@@ -25,7 +38,9 @@ export class DayPlate {
             data-bs-target={`#v-pills-d${this.k}-tab`} 
             type="button" role="tab" 
             aria-controls={`v-pills-d${this.k}-tab`} 
-            aria-selected={`${this.aria}`}>
+            aria-selected={`${this.aria}`}
+            onClick={this.toggleDayNavButton}
+            >
             <span class="daysSpan">
                 {this.day}
                 <br />

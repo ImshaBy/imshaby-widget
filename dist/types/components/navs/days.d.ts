@@ -5,5 +5,6 @@ export declare class DayPlate {
     aria: string;
     day: any;
     date: any;
+    private toggleDayNavButton;
     render(): any;
 }

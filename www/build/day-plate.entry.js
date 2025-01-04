@@ -5,6 +5,19 @@ const daysCss = ".daysNavLink{border-width:1px;border-style:solid;border-color:#
 const DayPlate = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.toggleDayNavButton = (event) => {
+            let btn = (event.target);
+            if (btn.tagName == 'SPAN') {
+                btn = btn.parentElement;
+            }
+            Array.from(btn.parentElement.parentElement.children).forEach(el => {
+                el = el.querySelector('.daysNavLink');
+                el.classList.remove('active');
+                el.ariaSelected = 'false';
+            });
+            btn.classList.add('active');
+            btn.ariaSelected = 'true';
+        };
         this.active = undefined;
         this.disabled = undefined;
         this.k = undefined;
@@ -13,7 +26,7 @@ const DayPlate = class {
         this.date = undefined;
     }
     render() {
-        return (h("button", { key: 'c262260d85828e090e4db734dba0b68d2d099cca', class: `nav-link daysNavLink ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}` }, h("span", { key: 'f39ed2af3eb7621217eba3cccb27b2a08198ec1a', class: "daysSpan" }, this.day, h("br", { key: '99d28902edec0a83fa579f7a595b35da38d99027' }), this.date)));
+        return (h("button", { key: '22fbce124ead7d2fdc7d068836ae82020dd16257', class: `nav-link daysNavLink ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}`, onClick: this.toggleDayNavButton }, h("span", { key: '61020aedc4bcda0952df1bd29241d1c99aea8b80', class: "daysSpan" }, this.day, h("br", { key: 'abb66e6203619cfb19867e58de8ea84abf680ada' }), this.date)));
     }
 };
 DayPlate.style = daysCss;
