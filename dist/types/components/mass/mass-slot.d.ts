@@ -17,5 +17,6 @@ export declare class MassSlot {
         broadcastUrl: string;
     };
     actual: boolean;
+    private toggleMassPlateButton;
     render(): any;
 }

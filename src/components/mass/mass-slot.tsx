@@ -30,8 +30,16 @@ export class MassSlot {
 
   @State() actual: boolean = false;
 
+  private toggleMassPlateButton = (event: Event) => {
+    let btn = (event.target) as HTMLElement
+    
+    btn.ariaExpanded = (!btn.classList.toggle('collapsed')).toString();
+    btn.parentElement.parentElement.querySelector(btn.dataset.bsTarget).classList.toggle('show')
+  }
+
   render() {
     let btnExpanded = (this.expanded) ? ("") : ("collapsed")
+    let btnAria = (this.expanded) ? ("true") : ("false")
     let accordionExpanded = (this.expanded) ? ("show") : ("")
 
     let lCR = D.strToDate(this.massInfo.lastConfirmRelevance)
@@ -48,8 +56,11 @@ export class MassSlot {
           <button
             class={`accordion-button ${btnExpanded}`}
             type="button" data-bs-toggle="collapse"
-            data-bs-target={`#flush-collapse${this.accordionIndex}-${this.massIndex}`} aria-expanded="false"
-            aria-controls={`flush-collapse${this.accordionIndex}-${this.massIndex}`}>
+            data-bs-target={`#flush-collapse${this.accordionIndex}-${this.massIndex}`} 
+            aria-expanded={btnAria}
+            aria-controls={`flush-collapse${this.accordionIndex}-${this.massIndex}`}
+            onClick={this.toggleMassPlateButton}
+            >
 
             <mass-plate
               actual={this.actual}
