@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'no-mass',
@@ -9,10 +9,12 @@ import { Component, h } from '@stencil/core';
 export class NoMass {
 
   render() {
-    return (
+    return (<>
+
       <div class="container-fluid mt-3">
           <span class="spanRow">На гэты дзень Імш няма.</span>
       </div>
-    )
+
+    </>)
   }
 }

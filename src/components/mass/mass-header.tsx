@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'mass-header',
@@ -12,11 +12,13 @@ export class MassHeader {
   @Prop() langCode: string;
 
   render() {
-    return (<div>
+    return (<>
+
       <span class="spanRow spanAddress">
         <span class="address">Адрас: {this.address}</span>
       </span>
       <span class="langCode">Мова: {this.langCode}</span>
-    </div>)
+      
+    </>)
   }
 }

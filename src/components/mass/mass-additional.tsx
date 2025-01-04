@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'mass-additional',
@@ -13,7 +13,7 @@ export class MassAdditional {
   @Prop() broadcastUrl: string = '#';
 
   render() {
-    return (<div>
+    return (<>
 
       {
         (this.rorate) ? (
@@ -33,6 +33,6 @@ export class MassAdditional {
         ) : (null)
       }
 
-    </div>)
+    </>)
   }
 }

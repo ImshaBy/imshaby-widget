@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Prop, State, h, Fragment } from '@stencil/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -67,7 +67,7 @@ export class ImshaBySchedule {
 
   render() {
     return (
-      <div>
+      <>
         <div innerHTML={this.colorStyle}></div>
 
         <div class="align-items-center">
@@ -110,6 +110,7 @@ export class ImshaBySchedule {
                         massInfo={massInfo} 
                         accordionIndex={i}
                         massIndex={++n}
+                        expanded={this.expanded}
                       ></mass-slot>
                     )
                   })
@@ -136,7 +137,7 @@ export class ImshaBySchedule {
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossOrigin='anonymous'></script>
 
-      </div>
+      </>
       );
   }
 }

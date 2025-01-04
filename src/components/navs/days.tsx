@@ -3,7 +3,7 @@ import { Prop, Component, h } from "@stencil/core";
 @Component({
     tag: 'day-plate',
     styleUrl: 'days.css',
-    shadow: true,
+    shadow: false,
 })
 
 export class DayPlate {

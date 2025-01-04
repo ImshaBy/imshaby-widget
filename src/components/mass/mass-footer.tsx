@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'mass-footer',
@@ -12,7 +12,7 @@ export class MassFooter {
   @Prop() lastConfirmRelevance: string;
 
   render() {
-    return (<div>
+    return (<>
 
       {
         (this.info != null) ? (
@@ -26,6 +26,6 @@ export class MassFooter {
         Последнее изменение: {this.lastConfirmRelevance}
       </span>
       
-    </div>)
+    </>)
     }
 }

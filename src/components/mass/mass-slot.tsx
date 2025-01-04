@@ -1,4 +1,4 @@
-import { Component, State, Prop, h } from '@stencil/core';
+import { Component, State, Prop, h, Fragment } from '@stencil/core';
 import { D } from '../../utils/days';
 
 @Component({
@@ -41,7 +41,7 @@ export class MassSlot {
     if (fCR.getTime() >= Date.now()) {this.actual = true}
 
     return (
-    <div>
+    <>
       <div class="accordion-item">
 
         <h2 class="accordion-header">
@@ -88,7 +88,7 @@ export class MassSlot {
         </div>
 
       </div>
-    </div>
+    </>
     )
   }
 }

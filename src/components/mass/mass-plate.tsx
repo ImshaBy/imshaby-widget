@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'mass-plate',
@@ -14,26 +14,26 @@ export class MassPlate {
   @Prop() online: boolean = false;
 
   render() {
-    return (<div>
+    return (<>
 
-    <span class={`circle bg-${this.actual ? 'actual' : 'notactual'}`}></span>
+      <span class={`circle bg-${this.actual ? 'actual' : 'notactual'}`}></span>
 
-    <span class="massHour">{this.time}</span>
+      <span class="massHour">{this.time}</span>
 
-      <div class="ms-5 me-auto">
-        {
-          (this.rorate) ? (
-            <span class="massRorate"></span>
-          ) : (null)
-        }
+        <div class="ms-5 me-auto">
+          {
+            (this.rorate) ? (
+              <span class="massRorate"></span>
+            ) : (null)
+          }
 
-        { 
-          (this.online) ? (
-            <span class="massOnline"></span>
-          ) : (null)
-        }
-      </div>
+          { 
+            (this.online) ? (
+              <span class="massOnline"></span>
+            ) : (null)
+          }
+        </div>
 
-    </div>)
+    </>)
     }
 }

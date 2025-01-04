@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-8cb4970f.js';
+import { r as registerInstance, h } from './index-a51fdbd4.js';
 
 const daysCss = ".daysNavLink{border-width:1px;border-style:solid;border-color:#dadada;border-radius:0 !important}.daysNavLink:hover{color:white !important}.daysNavLink.disabled{opacity:.3;pointer-events:none}";
 
@@ -13,7 +13,7 @@ const DayPlate = class {
         this.date = undefined;
     }
     render() {
-        return (h("button", { key: 'a58b1c50648e50ca7363dc565be6ba9fd8bf8ba9', class: `nav-link daysNavLink ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}` }, h("span", { key: '88a3216e5a3052a3cdd686d6582755e76db0bdff', class: "daysSpan" }, this.day, h("br", { key: '73c4403b8cb5f5dc4812ae23ffdce26e11fb3e0c' }), this.date)));
+        return (h("button", { key: 'ad7e2358fddd6b0eb64390ae2caac18b3845e7ae', class: `nav-link daysNavLink ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}` }, h("span", { key: '8d7f2fa6fcb3284dc615840e420bd0d12ca90210', class: "daysSpan" }, this.day, h("br", { key: 'dc5efd3ae8d5120527312fa56742bbb6befe426b' }), this.date)));
     }
 };
 DayPlate.style = daysCss;
