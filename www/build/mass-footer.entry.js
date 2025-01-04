@@ -9,7 +9,7 @@ const MassFooter = class {
         this.lastConfirmRelevance = undefined;
     }
     render() {
-        return (h("div", { key: '9c08f53161c3de9e872f054c7040e19b5a609499' }, "!this.info ? (", h("span", { key: '94ee6b223a4ef31a4ff6ed6f31015d5a3f1fe50b', class: "spanRow spanComment" }, h("span", { key: 'c30878488f84b32d7e21222f51c9ebdc7df045d5', class: "massComment" }, this.info)), ")", h("span", { key: '31eb26e04b5729c7d029a63368fa26701fc816f3', class: "ms-auto text-muted" }, "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0435: ", this.lastConfirmRelevance)));
+        return (h("div", { key: '6247be86eb8c8b538f99d839f12c06820f22ea01' }, (this.info != null) ? (h("span", { class: "spanRow spanComment" }, h("span", { class: "massComment" }, this.info))) : (null), h("span", { key: '806a2304fa9f5b7c1ffcdbad76e6eb3cb6fdbe4d', class: "ms-auto text-muted" }, "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0435: ", this.lastConfirmRelevance)));
     }
 };
 MassFooter.style = massCss;

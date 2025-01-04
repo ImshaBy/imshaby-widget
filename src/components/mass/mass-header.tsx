@@ -14,9 +14,9 @@ export class MassHeader {
   render() {
     return (<div>
       <span class="spanRow spanAddress">
-        <span class="address">Адрас: ${this.address}</span>
+        <span class="address">Адрас: {this.address}</span>
       </span>
-      <span class="langCode">Мова: ${this.langCode}</span>
+      <span class="langCode">Мова: {this.langCode}</span>
     </div>)
   }
 }

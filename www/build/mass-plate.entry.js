@@ -11,7 +11,7 @@ const MassPlate = class {
         this.online = false;
     }
     render() {
-        return (h("div", { key: '707cac4ddc5fe458620dc35d4dce0317abef613f' }, h("span", { key: 'fdc6edca4621b946503b1c00639130b818466dc9', class: `circle bg-${this.actual ? 'actual' : 'notactual'}` }), h("span", { key: 'a1f7e95a753244bd59572979bf627004218582bc', class: "massHour" }, this.time), h("div", { key: '72ae8bb28edadbb67c95d97b19f13c10da28b15a', class: "ms-5 me-auto" }, "this.rorate ? (", h("span", { key: '487f6d5f7265cc97f04b0c9a4c9b6bf2fab509ec', class: "massRorate" }), ") this.online ? (", h("span", { key: '223efc31757424c045aff812360cd5997a1b4407', class: "massOnline" }), ")")));
+        return (h("div", { key: '325983d2cbccb892a403ced9a936b69d72d30b32' }, h("span", { key: '57ef1a8c3ee162a12ddd3bef67584751560dfa38', class: `circle bg-${this.actual ? 'actual' : 'notactual'}` }), h("span", { key: 'defde634b66131d4cdb7e1435eb928c64b3c6e19', class: "massHour" }, this.time), h("div", { key: 'c2165b5e2d6d2afe454da233431a3d8d1fe2a598', class: "ms-5 me-auto" }, (this.rorate) ? (h("span", { class: "massRorate" })) : (null), (this.online) ? (h("span", { class: "massOnline" })) : (null))));
     }
 };
 MassPlate.style = massCss;

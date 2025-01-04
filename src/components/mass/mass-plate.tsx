@@ -21,13 +21,17 @@ export class MassPlate {
     <span class="massHour">{this.time}</span>
 
       <div class="ms-5 me-auto">
-        this.rorate ? (
-          <span class="massRorate"></span>
-        )
-        
-        this.online ? (
-          <span class="massOnline"></span>
-        )   
+        {
+          (this.rorate) ? (
+            <span class="massRorate"></span>
+          ) : (null)
+        }
+
+        { 
+          (this.online) ? (
+            <span class="massOnline"></span>
+          ) : (null)
+        }
       </div>
 
     </div>)

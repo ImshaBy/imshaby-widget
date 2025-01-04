@@ -14,11 +14,13 @@ export class MassFooter {
   render() {
     return (<div>
 
-      !this.info ? (
-        <span class="spanRow spanComment">
-          <span class="massComment">{this.info}</span>
-        </span>
-      )
+      {
+        (this.info != null) ? (
+          <span class="spanRow spanComment">
+            <span class="massComment">{this.info}</span>
+          </span>
+        ) : (null)
+      }
 
       <span class="ms-auto text-muted">
         Последнее изменение: {this.lastConfirmRelevance}
