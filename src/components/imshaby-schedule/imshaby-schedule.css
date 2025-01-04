@@ -1,3 +1,5 @@
 :host {
   display: block;
 }
+
+@import url(bootstrap.min.css);

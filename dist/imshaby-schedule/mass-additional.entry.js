@@ -10,7 +10,7 @@ const MassAdditional = class {
         this.broadcastUrl = '#';
     }
     render() {
-        return (h("div", { key: '87679fdcc632287e170b33b17e1932add7c9e324' }, (this.rorate) ? (h("span", { class: "spanRow spanRorate" }, h("span", { class: "massRorate" }), " \u0420\u0430\u0440\u0430\u0442\u043D\u044F\u044F \u0406\u043C\u0448\u0430")) : (null), (this.online) ? (h("span", { class: "spanRow spanOnline" }, h("a", { href: "{this.broadcastUrl}", class: "broadcastUrl spanRow" }, h("span", { class: "massOnline" }), " \u0406\u043C\u0448\u0430 online"))) : (null)));
+        return (h("div", { key: '9ab1f6a84462eab29df886649853e022f4239ab5' }, (this.rorate) ? (h("span", { class: "spanRow spanRorate" }, h("span", { class: "massRorate" }), " \u0420\u0430\u0440\u0430\u0442\u043D\u044F\u044F \u0406\u043C\u0448\u0430")) : (null), (this.online) ? (h("span", { class: "spanRow spanOnline" }, h("a", { href: this.broadcastUrl, class: "broadcastUrl spanRow" }, h("span", { class: "massOnline" }), " \u0406\u043C\u0448\u0430 online"))) : (null)));
     }
 };
 MassAdditional.style = massCss;

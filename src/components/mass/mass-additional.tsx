@@ -3,7 +3,7 @@ import { Component, Prop, h } from '@stencil/core';
 @Component({
   tag: 'mass-additional',
   styleUrl: 'mass.css',
-  shadow: true
+  shadow: false
 })
 
 export class MassAdditional {
@@ -26,7 +26,7 @@ export class MassAdditional {
       {
         (this.online) ? (
           <span class="spanRow spanOnline">
-            <a href="{this.broadcastUrl}" class="broadcastUrl spanRow">
+            <a href={this.broadcastUrl} class="broadcastUrl spanRow">
               <span class="massOnline"></span> Імша online
             </a>
           </span>
