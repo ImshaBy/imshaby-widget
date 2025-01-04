@@ -23,10 +23,19 @@ export class DayPlate {
             el = el.querySelector('.daysNavLink')
             el.classList.remove('active')
             el.ariaSelected = 'false'
+            el.setAttribute('tabindex', '-1')
         })
 
         btn.classList.add('active')
         btn.ariaSelected = 'true'
+        btn.removeAttribute('tabindex')
+
+        console.log(btn)
+        let tabs = btn.parentElement.parentElement.parentElement.querySelector('#v-pills-tabContent')
+        Array.from(tabs.children).forEach(el => {
+            el.classList.remove('show', 'active')
+        })
+        tabs.querySelector(btn.dataset.bsTarget).classList.add('active', 'show')
     }
 
     render() {
