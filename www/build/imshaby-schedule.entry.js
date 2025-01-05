@@ -53,7 +53,7 @@ const bootstrap_bundle_min = bootstrap_bundle_min$1.exports;
 
 class CONST {
 }
-CONST.API_MASS_URL = 'https://app.nutricio.org/api/imshaby-widget-test-data';
+CONST.API_MASS_URL = 'https://api.imsha.by/api/mass/week';
 CONST.API_COLOR_SCHEME_URL = 'https://content.imsha.by/api/schedule-page?locale=be&populate[0]=theme';
 CONST.TRUE = true;
 CONST.FALSE = false;
