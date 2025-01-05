@@ -28,8 +28,6 @@ export class MassSlot {
     broadcastUrl: string,
   };
 
-  @State() actual: boolean = false;
-
   private toggleMassPlateButton = (event: Event) => {
     let btn = (event.target) as HTMLElement
     
@@ -46,7 +44,8 @@ export class MassSlot {
     let fCR = new Date(lCR)
     fCR.setDate(lCR.getDate() + parseInt(this.massInfo.updatePeriodInDays, 10))
     
-    if (fCR.getTime() >= Date.now()) {this.actual = true}
+    let actual = false
+    if (fCR.getTime() >= Date.now()) {actual = true}
 
     return (
     <>
@@ -63,7 +62,7 @@ export class MassSlot {
             >
 
             <mass-plate
-              actual={this.actual}
+              actual={actual}
               time={this.massInfo.time}
               rorate={this.massInfo.rorate}
               online={this.massInfo.online}

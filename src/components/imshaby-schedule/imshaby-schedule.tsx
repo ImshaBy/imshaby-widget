@@ -20,8 +20,6 @@ export class ImshaBySchedule {
   @State() private srvr: any;
   @State() private colorStyle: any;
   @State() private navigation: any;
-  
-  @Prop() plateBraker: boolean = false;
 
   async componentWillLoad() {
     this.srvr = new API()
@@ -67,6 +65,7 @@ export class ImshaBySchedule {
   }
 
   render() {
+    let plateBraker = false
     return (
       <>
         <div innerHTML={this.colorStyle}></div>
@@ -97,8 +96,8 @@ export class ImshaBySchedule {
                 let psa = ''
                 i++
 
-                if (!this.plateBraker) {
-                  this.plateBraker = true
+                if (!plateBraker) {
+                  plateBraker = true
                   psa = CONST.PLATE_SHOW_ACTIVE
                 }
 

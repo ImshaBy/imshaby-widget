@@ -206,7 +206,6 @@ const ImshaBySchedule = class {
         this.srvr = undefined;
         this.colorStyle = undefined;
         this.navigation = undefined;
-        this.plateBraker = false;
     }
     async componentWillLoad() {
         this.srvr = new API();
@@ -249,14 +248,15 @@ const ImshaBySchedule = class {
       `;
     }
     render() {
-        return (h(Fragment, null, h("div", { key: 'ffacc4bfec46fa3992c8d855407f02f5b3adf974', innerHTML: this.colorStyle }), h("div", { key: '21b8f8e0cf779febf5439c4eec009b49a23c3d3b', class: "align-items-center" }, h("div", { key: 'c2e5b5f6c96b4e3c64e9b48a90a5fc1447119dc2', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+        let plateBraker = false;
+        return (h(Fragment, null, h("div", { key: '949d4da9e2a2b343f1f696c76c7e2bf0f4570a4e', innerHTML: this.colorStyle }), h("div", { key: '5936bb267bd79481413500a7126a61b84eab17ca', class: "align-items-center" }, h("div", { key: 'd54e66853ef3d3cbb095c819c4d095746b7486ab', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
             return (h("day-plate", { active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: '9cebdcc11315390084701cc51adf663c004ec33a', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+        })), h("div", { key: 'a312b33248fcbc38ea537039e25d3093628b643c', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
             let content = [];
             let psa = '';
             i++;
-            if (!this.plateBraker) {
-                this.plateBraker = true;
+            if (!plateBraker) {
+                plateBraker = true;
                 psa = CONST.PLATE_SHOW_ACTIVE;
             }
             if (el.disabled) {
@@ -268,7 +268,7 @@ const ImshaBySchedule = class {
                 });
             }
             return (h("div", { class: `tab-pane fade ${psa} ${el.disabled}`, id: `v-pills-d${i}-tab`, "aria-labelledby": `v-pills-d${i}`, role: "tabpanel", tabindex: "0" }, h("div", { class: "accordion accordion-flush", id: `accordionFlush${i}` }, content)));
-        }))), h("script", { key: '5c6023bdbb0f436edd50f62db11f7144d442eb72', src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossOrigin: 'anonymous' })));
+        }))), h("script", { key: '5a208cf500b21f4247e4d66024d93b095bc7930f', src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossOrigin: 'anonymous' })));
     }
 };
 ImshaBySchedule.style = imshabyScheduleCss;

@@ -16,7 +16,6 @@ const MassSlot = class {
         this.massIndex = undefined;
         this.expanded = true;
         this.massInfo = undefined;
-        this.actual = false;
     }
     render() {
         let btnExpanded = (this.expanded) ? ("") : ("collapsed");
@@ -25,10 +24,11 @@ const MassSlot = class {
         let lCR = D.strToDate(this.massInfo.lastConfirmRelevance);
         let fCR = new Date(lCR);
         fCR.setDate(lCR.getDate() + parseInt(this.massInfo.updatePeriodInDays, 10));
+        let actual = false;
         if (fCR.getTime() >= Date.now()) {
-            this.actual = true;
+            actual = true;
         }
-        return (h(Fragment, null, h("div", { key: '125c42fbcfc255d1404d816fb1d3630ea1cadd43', class: "accordion-item" }, h("h2", { key: '92c7794b4ea78db3f42df92d0753e8506de991ef', class: "accordion-header" }, h("button", { key: '713f5edcfe19d20a04ad883b120262640d81019e', class: `accordion-button ${btnExpanded}`, type: "button", "data-bs-toggle": "collapse", "data-bs-target": `#flush-collapse${this.accordionIndex}-${this.massIndex}`, "aria-expanded": btnAria, "aria-controls": `flush-collapse${this.accordionIndex}-${this.massIndex}`, onClick: this.toggleMassPlateButton }, h("mass-plate", { key: '7442190ee221fd0675c3710fd89ccec35184e202', actual: this.actual, time: this.massInfo.time, rorate: this.massInfo.rorate, online: this.massInfo.online }))), h("div", { key: '6c758a0b6503e88efbee4cdfac4760450f0ba57b', id: `flush-collapse${this.accordionIndex}-${this.massIndex}`, class: `accordion-collapse collapse ${accordionExpanded}`, "data-bs-parent": `accordionFlush${this.accordionIndex}` }, h("div", { key: 'fc1a855e6c42b267c1574922e2c7e07050f6b14f', class: "accordion-body d-flex flex-column gap-2 border-gray" }, h("mass-header", { key: '5716b8ededcbbb541f0bea6cfc216ed92753fa88', address: this.massInfo.address, langCode: this.massInfo.langCode }), h("mass-additional", { key: '2f28e5a3b94366026e1658e8730f4afa14c0ad91', rorate: this.massInfo.rorate, online: this.massInfo.online, broadcastUrl: this.massInfo.broadcastUrl }), h("mass-footer", { key: 'df5044b8680b2e87a3b50da963ae34821b5c5a87', info: this.massInfo.info, lastConfirmRelevance: this.massInfo.lastConfirmRelevance }))))));
+        return (h(Fragment, null, h("div", { key: '5642d20da363d7fc84e30f616dacfa38585900d7', class: "accordion-item" }, h("h2", { key: '41dc2c872cb18a5d6ae055c2e9a89e4df81f1a3e', class: "accordion-header" }, h("button", { key: 'c3a1d7976b415ede3de428eba70fb6476ef341bb', class: `accordion-button ${btnExpanded}`, type: "button", "data-bs-toggle": "collapse", "data-bs-target": `#flush-collapse${this.accordionIndex}-${this.massIndex}`, "aria-expanded": btnAria, "aria-controls": `flush-collapse${this.accordionIndex}-${this.massIndex}`, onClick: this.toggleMassPlateButton }, h("mass-plate", { key: 'ebdac230a543963dce758eadf2a36ebc7e07a64b', actual: actual, time: this.massInfo.time, rorate: this.massInfo.rorate, online: this.massInfo.online }))), h("div", { key: '98c342d206aca4355575a08c7b7d69a63939738f', id: `flush-collapse${this.accordionIndex}-${this.massIndex}`, class: `accordion-collapse collapse ${accordionExpanded}`, "data-bs-parent": `accordionFlush${this.accordionIndex}` }, h("div", { key: 'b538f9510d5c92efcc32fbfb30e0ee93d3517daf', class: "accordion-body d-flex flex-column gap-2 border-gray" }, h("mass-header", { key: '2869563ad27d26584a8c428287c1afd4a51612d6', address: this.massInfo.address, langCode: this.massInfo.langCode }), h("mass-additional", { key: '92ef03f6f65127ea4d1a92afdc78b825f0bdeffd', rorate: this.massInfo.rorate, online: this.massInfo.online, broadcastUrl: this.massInfo.broadcastUrl }), h("mass-footer", { key: '6d514f2a9b78e3f408ae541f92669cef2cd03961', info: this.massInfo.info, lastConfirmRelevance: this.massInfo.lastConfirmRelevance }))))));
     }
 };
 MassSlot.style = massCss;

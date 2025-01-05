@@ -17,7 +17,6 @@ export namespace Components {
     interface ImshabySchedule {
         "expanded": boolean;
         "parishId": string;
-        "plateBraker": boolean;
     }
     interface MassAdditional {
         "broadcastUrl": string;
@@ -132,7 +131,6 @@ declare namespace LocalJSX {
     interface ImshabySchedule {
         "expanded"?: boolean;
         "parishId"?: string;
-        "plateBraker"?: boolean;
     }
     interface MassAdditional {
         "broadcastUrl"?: string;

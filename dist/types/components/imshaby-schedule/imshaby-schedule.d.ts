@@ -6,7 +6,6 @@ export declare class ImshaBySchedule {
     private srvr;
     private colorStyle;
     private navigation;
-    plateBraker: boolean;
     componentWillLoad(): Promise<void>;
     private getParishId;
     private createColors;
