@@ -23,7 +23,7 @@ export class MassFooter {
       }
 
       <span class="ms-auto text-muted">
-        Последнее изменение: {this.lastConfirmRelevance}
+        Последнее изменение: {this.lastConfirmRelevance.replace(/-/g, '.')}
       </span>
       
     </>)

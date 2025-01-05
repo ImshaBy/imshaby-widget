@@ -1,6 +1,6 @@
 import { r as registerInstance, h } from './index-39d9f9e8.js';
 
-const daysCss = ".daysNavLink{border-width:1px;border-style:solid;border-color:#dadada;border-radius:0 !important}.daysNavLink:hover{color:white !important}.daysNavLink.disabled{opacity:.3;pointer-events:none}";
+const daysCss = ".daysNavLink{border-width:1px !important;border-style:solid !important;border-color:#dadada !important;border-radius:0 !important}.daysNavLink:hover{color:white !important}.daysNavLink.disabled{opacity:.3;pointer-events:none}";
 
 const DayPlate = class {
     constructor(hostRef) {
@@ -33,7 +33,7 @@ const DayPlate = class {
         this.date = undefined;
     }
     render() {
-        return (h("button", { key: '172d59321f4d8ec6263ec3e3e8f155fc66bb921c', class: `daysNavLink w-100 ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}`, onClick: this.toggleDayNavButton }, h("span", { key: '32e15c3590470be5a2b856a052a9d43271232be9', class: "daysSpan" }, this.day, h("br", { key: 'f98dd9d329eb4c75d93c4bc32d7b289421133e22' }), this.date)));
+        return (h("button", { key: '563b1f4d74dc790cf4f411c2eb3b41d321d9672c', class: `btn btn-sm daysNavLink w-100 ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}`, onClick: this.toggleDayNavButton }, h("span", { key: '44c96073161a5e5422073a581f6d1b58d5d349e3', class: "daysSpan" }, this.day, h("br", { key: 'ae8dce474b76768c87b5c6d2250bd773d0a8fb9e' }), this.date)));
     }
 };
 DayPlate.style = daysCss;

@@ -1,7 +1,7 @@
 .daysNavLink {
-    border-width: 1px; /* 0 1px 1px 0 */
-    border-style:  solid;
-    border-color:  #dadada;
+    border-width: 1px !important; /* 0 1px 1px 0 */
+    border-style: solid !important;
+    border-color: #dadada !important;
     border-radius: 0 !important;
   }
 

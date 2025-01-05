@@ -30,6 +30,10 @@
   color: black;
 }
 
+.massComment {
+  color: rgb(127, 127, 127);
+}
+
 .circle {
   display: block;
   position: relative;
