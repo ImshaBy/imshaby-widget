@@ -4,11 +4,12 @@
     border-color:  #dadada;
     border-radius: 0 !important;
   }
-  .daysNavLink:hover {
-    color: white !important;
-  }
-  
-  .daysNavLink.disabled {
-    opacity: .3;
-    pointer-events: none;
-  }
+
+.daysNavLink:hover {
+  color: white !important;
+}
+
+.daysNavLink.disabled {
+  opacity: .3;
+  pointer-events: none;
+}

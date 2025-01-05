@@ -46,6 +46,7 @@ export class ImshaBySchedule {
 
         .daysNavLink.active, .daysNavLink:hover {
           background-color: var(--color-scheme) !important;
+          color: white !important;
         }
 
         .massRorate {
@@ -76,6 +77,7 @@ export class ImshaBySchedule {
               this.navigation.daysNavs.map((el: any, i: number) => {
                 return (
                   <day-plate
+                    class={'nav-link'}
                     active={el.active}
                     disabled={el.disabled}
                     aria={el.aria}

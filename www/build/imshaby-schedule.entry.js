@@ -230,6 +230,7 @@ const ImshaBySchedule = class {
 
         .daysNavLink.active, .daysNavLink:hover {
           background-color: var(--color-scheme) !important;
+          color: white !important;
         }
 
         .massRorate {
@@ -249,9 +250,9 @@ const ImshaBySchedule = class {
     }
     render() {
         let plateBraker = false;
-        return (h(Fragment, null, h("div", { key: '949d4da9e2a2b343f1f696c76c7e2bf0f4570a4e', innerHTML: this.colorStyle }), h("div", { key: '5936bb267bd79481413500a7126a61b84eab17ca', class: "align-items-center" }, h("div", { key: 'd54e66853ef3d3cbb095c819c4d095746b7486ab', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
-            return (h("day-plate", { active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: 'a312b33248fcbc38ea537039e25d3093628b643c', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+        return (h(Fragment, null, h("div", { key: '07fba9d4118548a0c176a75ca5978752c4433157', innerHTML: this.colorStyle }), h("div", { key: 'd837b9c9230809eee5cb4da562e8f091c958eb53', class: "align-items-center" }, h("div", { key: '9ebdeab988c34abb7bd05a2df37e7301a16cb83d', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+            return (h("day-plate", { class: 'nav-link', active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
+        })), h("div", { key: 'a12c59eafbd807da5353ea16e93dbb8a41fdf25f', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
             let content = [];
             let psa = '';
             i++;
@@ -268,7 +269,7 @@ const ImshaBySchedule = class {
                 });
             }
             return (h("div", { class: `tab-pane fade ${psa} ${el.disabled}`, id: `v-pills-d${i}-tab`, "aria-labelledby": `v-pills-d${i}`, role: "tabpanel", tabindex: "0" }, h("div", { class: "accordion accordion-flush", id: `accordionFlush${i}` }, content)));
-        }))), h("script", { key: '5a208cf500b21f4247e4d66024d93b095bc7930f', src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossOrigin: 'anonymous' })));
+        }))), h("script", { key: '0deecd6e5a81981f6522b90583d1be162c8a0868', src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossOrigin: 'anonymous' })));
     }
 };
 ImshaBySchedule.style = imshabyScheduleCss;

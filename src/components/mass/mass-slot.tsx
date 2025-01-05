@@ -1,4 +1,4 @@
-import { Component, State, Prop, h, Fragment } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core';
 import { D } from '../../utils/days';
 
 @Component({
@@ -62,6 +62,7 @@ export class MassSlot {
             >
 
             <mass-plate
+              class='d-flex flex-row align-items-center'
               actual={actual}
               time={this.massInfo.time}
               rorate={this.massInfo.rorate}

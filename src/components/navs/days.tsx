@@ -40,7 +40,7 @@ export class DayPlate {
     render() {
         return (
         <button
-            class={`nav-link daysNavLink ${this.active} ${this.disabled}`} 
+            class={`daysNavLink w-100 ${this.active} ${this.disabled}`} 
             id={`v-pills-d${this.k}`} 
             data-bs-toggle="pill" 
             data-bs-target={`#v-pills-d${this.k}-tab`} 
