@@ -1,16 +1,16 @@
-import { D } from "../utils/days";
+import { D } from "../utils/days"
 
 export class DaysNavigation {
 
-    scheduleInfo: any;
-    allDays: any[] = [];
+    scheduleInfo: any
+    allDays: any[] = []
     daysNavs: {
       day: string,
       date: any,
       disabled: string,
       active: string,
       dayNumber: string,
-    }[] = [];
+    }[] = []
   
     constructor(props) {
         this.scheduleInfo = props.scheduleInfo

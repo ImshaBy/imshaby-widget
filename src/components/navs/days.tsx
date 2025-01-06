@@ -1,4 +1,4 @@
-import { Prop, Component, h } from "@stencil/core";
+import { Prop, Component, h } from "@stencil/core"
 
 @Component({
     tag: 'day-plate',
@@ -8,12 +8,12 @@ import { Prop, Component, h } from "@stencil/core";
 
 export class DayPlate {
 
-    @Prop() active: string;
-    @Prop() disabled: string;
-    @Prop() k: number;
-    @Prop() aria: string = 'false';
-    @Prop() day: any;
-    @Prop() date: any;
+    @Prop() active: string
+    @Prop() disabled: string
+    @Prop() k: number
+    @Prop() aria: string = 'false'
+    @Prop() day: any
+    @Prop() date: any
 
     private toggleDayNavButton = (event: Event) => {
         let btn = (event.target) as HTMLElement

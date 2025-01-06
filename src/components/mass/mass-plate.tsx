@@ -1,4 +1,4 @@
-import { Component, Prop, h, Fragment } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core'
 
 @Component({
   tag: 'mass-plate',
@@ -8,10 +8,10 @@ import { Component, Prop, h, Fragment } from '@stencil/core';
 
 export class MassPlate {
 
-  @Prop() time: string;
-  @Prop() actual: boolean = true;
-  @Prop() rorate: boolean = false;
-  @Prop() online: boolean = false;
+  @Prop() time: string
+  @Prop() actual: boolean = true
+  @Prop() rorate: boolean = false
+  @Prop() online: boolean = false
 
   render() {
     return (<>

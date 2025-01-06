@@ -1,4 +1,4 @@
-import { Component, Prop, h, Fragment } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core'
 
 @Component({
   tag: 'mass-additional',
@@ -8,9 +8,9 @@ import { Component, Prop, h, Fragment } from '@stencil/core';
 
 export class MassAdditional {
 
-  @Prop() rorate: boolean = false;
-  @Prop() online: boolean = false;
-  @Prop() broadcastUrl: string = '#';
+  @Prop() rorate: boolean = false
+  @Prop() online: boolean = false
+  @Prop() broadcastUrl: string = '#'
 
   render() {
     return (<>

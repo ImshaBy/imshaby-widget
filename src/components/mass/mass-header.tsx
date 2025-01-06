@@ -1,4 +1,4 @@
-import { Component, Prop, h, Fragment } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core'
 
 @Component({
   tag: 'mass-header',
@@ -8,8 +8,8 @@ import { Component, Prop, h, Fragment } from '@stencil/core';
 
 export class MassHeader {
 
-  @Prop() address: string;
-  @Prop() langCode: string;
+  @Prop() address: string
+  @Prop() langCode: string
 
   render() {
     return (<>

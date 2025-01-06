@@ -1,10 +1,10 @@
-import { Component, Prop, State, h, Fragment } from '@stencil/core';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { Component, Prop, State, h, Fragment } from '@stencil/core'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-import { API } from '../../services/api';
-import { DaysNavigation } from '../../services/navs';
-import { CONST } from '../../services/constants';
+import { API } from '../../services/api'
+import { DaysNavigation } from '../../services/navs'
+import { CONST } from '../../services/constants'
 
 @Component({
   tag: 'imshaby-schedule',
@@ -14,15 +14,15 @@ import { CONST } from '../../services/constants';
 
 export class ImshaBySchedule {
   
-  @Prop() parishId: string;
-  @Prop() expanded: boolean = true;
+  @Prop() parishId: string
+  @Prop() expanded: boolean = true
 
-  @State() private srvr: any;
-  @State() private colorStyle: any;
-  @State() private navigation: any;
+  @State() private srvr: any
+  @State() private colorStyle: any
+  @State() private navigation: any
 
-  @State() private widgetCompositionFailed: boolean = false;
-  @State() private widgetCompositionFailedError: Error;
+  @State() private widgetCompositionFailed: boolean = false
+  @State() private widgetCompositionFailedError: Error
 
   async componentWillLoad() {
     this.srvr = new API()
@@ -39,7 +39,7 @@ export class ImshaBySchedule {
   }
 
   private getParishId() {
-    return this.parishId;
+    return this.parishId
   }
 
   private createColors(props) {
@@ -168,6 +168,6 @@ export class ImshaBySchedule {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossOrigin='anonymous'></script>
 
       </>
-      );
+      )
   }
 }

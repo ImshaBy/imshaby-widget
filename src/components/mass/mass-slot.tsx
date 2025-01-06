@@ -1,5 +1,5 @@
-import { Component, Prop, h, Fragment } from '@stencil/core';
-import { D } from '../../utils/days';
+import { Component, Prop, h, Fragment } from '@stencil/core'
+import { D } from '../../utils/days'
 
 @Component({
   tag: 'mass-slot',
@@ -9,10 +9,10 @@ import { D } from '../../utils/days';
 
 export class MassSlot {
 
-  @Prop() accordionIndex: number;
-  @Prop() accordionExpanded: string;
-  @Prop() massIndex: number;
-  @Prop() expanded = true;
+  @Prop() accordionIndex: number
+  @Prop() accordionExpanded: string
+  @Prop() massIndex: number
+  @Prop() expanded = true
 
   @Prop() massInfo: {
     time: string,
@@ -26,7 +26,7 @@ export class MassSlot {
     rorate: boolean,
     address: string,
     broadcastUrl: string,
-  };
+  }
 
   private toggleMassPlateButton = (event: Event) => {
     let btn = (event.target) as HTMLElement
@@ -36,7 +36,7 @@ export class MassSlot {
       }
     }
     
-    btn.ariaExpanded = (!btn.classList.toggle('collapsed')).toString();
+    btn.ariaExpanded = (!btn.classList.toggle('collapsed')).toString()
     btn.parentElement.parentElement.querySelector(btn.dataset.bsTarget).classList.toggle('show')
   }
 

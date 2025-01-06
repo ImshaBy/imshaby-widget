@@ -1,4 +1,4 @@
-import { Component, h, Fragment } from '@stencil/core';
+import { Component, h, Fragment } from '@stencil/core'
 
 @Component({
   tag: 'no-mass',

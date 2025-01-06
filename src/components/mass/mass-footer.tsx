@@ -1,4 +1,4 @@
-import { Component, Prop, h, Fragment } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core'
 
 @Component({
   tag: 'mass-footer',
@@ -8,8 +8,8 @@ import { Component, Prop, h, Fragment } from '@stencil/core';
 
 export class MassFooter {
 
-  @Prop() info: string;
-  @Prop() lastConfirmRelevance: string;
+  @Prop() info: string
+  @Prop() lastConfirmRelevance: string
 
   render() {
     return (<>
