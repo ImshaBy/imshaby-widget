@@ -175,12 +175,13 @@ class DaysNavigation {
             let newDate;
             if (this.dayInDaysExists(a)) {
                 newDate = new Date(Date.parse(this.scheduleInfo.find(el => el.dayNumber == a).date));
-                date = newDate.getDate().toString().padStart(2, '0') + '.' + (newDate.getMonth() + 1).toString().padStart(2, '0');
             }
             else {
+                newDate = D.getToday();
+                newDate.setDate(D.getToday().getDate() + i);
                 disabled = 'disabled';
-                date = '—';
             }
+            date = newDate.getDate().toString().padStart(2, '0') + '.' + (newDate.getMonth() + 1).toString().padStart(2, '0');
             day = D.getWeekName(a);
             if (i == 0) {
                 active = 'active';
@@ -193,6 +194,7 @@ class DaysNavigation {
                 disabled: disabled,
             };
         });
+        console.log(this.daysNavs);
     }
 }
 
@@ -250,9 +252,9 @@ const ImshaBySchedule = class {
     }
     render() {
         let plateBraker = false;
-        return (h(Fragment, null, h("div", { key: '19f04ef4fc242bbe4a8e250101d8881d815709d1', innerHTML: this.colorStyle }), h("div", { key: '430cd7bab72062935f2378b0d33340cdf9e27ee1', class: "align-items-center" }, h("div", { key: 'bb48368f5237fb03afb8e519266f2fd0d0dedfa9', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+        return (h(Fragment, null, h("div", { key: 'f8b4eaff054b4e417fff3bbe38ccaee1e4457ab0', innerHTML: this.colorStyle }), h("div", { key: 'a703b1ce64103515b4d28ae2a6bc1d05ab42c3ea', class: "align-items-center" }, h("div", { key: 'f88817a2e7035916f78f34502073596df5fa085f', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
             return (h("day-plate", { class: 'nav-link', active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: '86530569580086deb4e2721428bdc1d016fc6770', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+        })), h("div", { key: '7b8c26936fb6b9102aa658a595d9cd617113c942', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
             let content = [];
             let psa = '';
             i++;
@@ -269,7 +271,7 @@ const ImshaBySchedule = class {
                 });
             }
             return (h("div", { class: `tab-pane fade ${psa} ${el.disabled}`, id: `v-pills-d${i}-tab`, "aria-labelledby": `v-pills-d${i}`, role: "tabpanel", tabindex: "0" }, h("div", { class: "accordion accordion-flush", id: `accordionFlush${i}` }, content)));
-        }))), h("script", { key: 'b7cf8d393b88b08f53795c77a2e26e5911068cf1', src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossOrigin: 'anonymous' })));
+        }))), h("script", { key: 'ddb5106f0811d7f32674e28e1b728fff29499c8a', src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossOrigin: 'anonymous' })));
     }
 };
 ImshaBySchedule.style = imshabyScheduleCss;

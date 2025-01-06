@@ -70,11 +70,13 @@ export class DaysNavigation {
 
         if (this.dayInDaysExists(a)) {
           newDate = new Date( Date.parse( this.scheduleInfo.find(el => el.dayNumber == a).date ) )
-          date = newDate.getDate().toString().padStart(2, '0') + '.' + (newDate.getMonth() + 1).toString().padStart(2, '0')
         } else {
+          newDate = D.getToday()
+          newDate.setDate(D.getToday().getDate() + i)
           disabled = 'disabled'
-          date = '—'
         }
+        date = newDate.getDate().toString().padStart(2, '0') + '.' + (newDate.getMonth() + 1).toString().padStart(2, '0')
+        
 
         day = D.getWeekName(a)
         if (i == 0) { active = 'active' }
@@ -87,7 +89,7 @@ export class DaysNavigation {
           disabled: disabled,
         }
     })
-
+    console.log(this.daysNavs)
   }
 
 }
