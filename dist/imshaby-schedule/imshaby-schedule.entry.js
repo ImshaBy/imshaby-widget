@@ -250,9 +250,9 @@ const ImshaBySchedule = class {
     }
     render() {
         let plateBraker = false;
-        return (h(Fragment, null, h("div", { key: '07fba9d4118548a0c176a75ca5978752c4433157', innerHTML: this.colorStyle }), h("div", { key: 'd837b9c9230809eee5cb4da562e8f091c958eb53', class: "align-items-center" }, h("div", { key: '9ebdeab988c34abb7bd05a2df37e7301a16cb83d', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+        return (h(Fragment, null, h("div", { key: '19f04ef4fc242bbe4a8e250101d8881d815709d1', innerHTML: this.colorStyle }), h("div", { key: '430cd7bab72062935f2378b0d33340cdf9e27ee1', class: "align-items-center" }, h("div", { key: 'bb48368f5237fb03afb8e519266f2fd0d0dedfa9', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
             return (h("day-plate", { class: 'nav-link', active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: 'a12c59eafbd807da5353ea16e93dbb8a41fdf25f', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+        })), h("div", { key: '86530569580086deb4e2721428bdc1d016fc6770', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
             let content = [];
             let psa = '';
             i++;
@@ -269,7 +269,7 @@ const ImshaBySchedule = class {
                 });
             }
             return (h("div", { class: `tab-pane fade ${psa} ${el.disabled}`, id: `v-pills-d${i}-tab`, "aria-labelledby": `v-pills-d${i}`, role: "tabpanel", tabindex: "0" }, h("div", { class: "accordion accordion-flush", id: `accordionFlush${i}` }, content)));
-        }))), h("script", { key: '0deecd6e5a81981f6522b90583d1be162c8a0868', src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossOrigin: 'anonymous' })));
+        }))), h("script", { key: 'b7cf8d393b88b08f53795c77a2e26e5911068cf1', src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossOrigin: 'anonymous' })));
     }
 };
 ImshaBySchedule.style = imshabyScheduleCss;

@@ -17,7 +17,11 @@ export class DayPlate {
 
     private toggleDayNavButton = (event: Event) => {
         let btn = (event.target) as HTMLElement
-        if (btn.tagName == 'SPAN') { btn = btn.parentElement }
+        if (btn.tagName != 'BUTTON') {
+            while (btn.tagName != 'BUTTON' && !btn.classList.contains('daysNavLink')) {
+                btn = btn.parentElement
+                }
+        }
 
         Array.from(btn.parentElement.parentElement.children).forEach(el => {
             el = el.querySelector('.daysNavLink')

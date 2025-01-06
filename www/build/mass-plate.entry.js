@@ -11,7 +11,7 @@ const MassPlate = class {
         this.online = false;
     }
     render() {
-        return (h(Fragment, null, h("span", { key: '083e549000fcc023b2d3a48145670d6803be37ee', class: `circle bg-${this.actual ? 'actual' : 'notactual'}` }), h("span", { key: 'cfdc59d69a8d9ef8b3bb9a485adb52749163b0e9', class: "massHour" }, this.time), h("div", { key: '09245e781af354f318361eb13520cdef330c5ed1', class: "ms-5 me-auto" }, (this.rorate) ? (h("span", { class: "massRorate" })) : (null), (this.online) ? (h("span", { class: "massOnline" })) : (null))));
+        return (h(Fragment, null, h("span", { key: '810f423031fe67e8855ce10bf4e2fc35edbf7584', class: `circle bg-${this.actual ? 'actual' : 'notactual'}` }), h("span", { key: '0bbe3c480f2e36fabae7241200e147c76a74448f', class: "massHour" }, this.time), h("div", { key: '1326baed78dbcd1955467a8ad7aabd153ac40f9a', class: "ms-5 me-auto" }, (this.rorate) ? (h("span", { class: "massRorate" })) : (null), (this.online) ? (h("span", { class: "massOnline" })) : (null))));
     }
 };
 MassPlate.style = massCss;

@@ -30,6 +30,11 @@ export class MassSlot {
 
   private toggleMassPlateButton = (event: Event) => {
     let btn = (event.target) as HTMLElement
+    if (btn.tagName != 'BUTTON') {
+      while (btn.tagName != 'BUTTON' && !btn.classList.contains('accordion-button')) {
+        btn = btn.parentElement
+      }
+    }
     
     btn.ariaExpanded = (!btn.classList.toggle('collapsed')).toString();
     btn.parentElement.parentElement.querySelector(btn.dataset.bsTarget).classList.toggle('show')

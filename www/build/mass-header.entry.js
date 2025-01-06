@@ -9,7 +9,7 @@ const MassHeader = class {
         this.langCode = undefined;
     }
     render() {
-        return (h(Fragment, null, h("span", { key: '7dd870b86e04ed68cc8e24df613b90618ffaa520', class: "spanRow spanAddress" }, h("span", { key: '88318a9744bade0ec2122273648105ff95743516', class: "address" }, "\u0410\u0434\u0440\u0430\u0441: ", this.address)), h("span", { key: 'de2e82fa5688f00cc2d1ff184665cb7bd6990573', class: "langCode" }, "\u041C\u043E\u0432\u0430: ", this.langCode)));
+        return (h(Fragment, null, h("span", { key: '2363bc8d748ed5462c23803baa5a2a9b3072604e', class: "spanRow spanAddress" }, h("span", { key: '9c3ef1941666723710a5e5b907075d6aed4d036d', class: "address" }, "\u0410\u0434\u0440\u0430\u0441: ", this.address)), h("span", { key: 'a954e6fa820bd7d9e522ed6097c8efdabb2b4ff5', class: "langCode" }, "\u041C\u043E\u0432\u0430: ", this.langCode)));
     }
 };
 MassHeader.style = massCss;

@@ -7,8 +7,10 @@ const DayPlate = class {
         registerInstance(this, hostRef);
         this.toggleDayNavButton = (event) => {
             let btn = (event.target);
-            if (btn.tagName == 'SPAN') {
-                btn = btn.parentElement;
+            if (btn.tagName != 'BUTTON') {
+                while (btn.tagName != 'BUTTON' && !btn.classList.contains('daysNavLink')) {
+                    btn = btn.parentElement;
+                }
             }
             Array.from(btn.parentElement.parentElement.children).forEach(el => {
                 el = el.querySelector('.daysNavLink');
@@ -33,7 +35,7 @@ const DayPlate = class {
         this.date = undefined;
     }
     render() {
-        return (h("button", { key: '563b1f4d74dc790cf4f411c2eb3b41d321d9672c', class: `btn btn-sm daysNavLink w-100 ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}`, onClick: this.toggleDayNavButton }, h("span", { key: '44c96073161a5e5422073a581f6d1b58d5d349e3', class: "daysSpan" }, this.day, h("br", { key: 'ae8dce474b76768c87b5c6d2250bd773d0a8fb9e' }), this.date)));
+        return (h("button", { key: '6abe6daecb46bf24c78adfe7a8aad868eb0ead3e', class: `btn btn-sm daysNavLink w-100 ${this.active} ${this.disabled}`, id: `v-pills-d${this.k}`, "data-bs-toggle": "pill", "data-bs-target": `#v-pills-d${this.k}-tab`, type: "button", role: "tab", "aria-controls": `v-pills-d${this.k}-tab`, "aria-selected": `${this.aria}`, onClick: this.toggleDayNavButton }, h("span", { key: '66a464d381856410bb2ab9d594889da2754798d4', class: "daysSpan" }, this.day, h("br", { key: 'e6398865b52fd54a716d75d881524e2adef87370' }), this.date)));
     }
 };
 DayPlate.style = daysCss;
