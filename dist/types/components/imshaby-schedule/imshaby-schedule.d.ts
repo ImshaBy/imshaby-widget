@@ -6,6 +6,8 @@ export declare class ImshaBySchedule {
     private srvr;
     private colorStyle;
     private navigation;
+    private widgetCompositionFailed;
+    private widgetCompositionFailedError;
     componentWillLoad(): Promise<void>;
     private getParishId;
     private createColors;

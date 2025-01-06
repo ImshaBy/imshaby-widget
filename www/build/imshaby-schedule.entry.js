@@ -61,6 +61,7 @@ CONST.NULL = null;
 CONST.PLATE_SHOW_ACTIVE = 'show active';
 CONST.ERR_GETTING_SCHEDULE = 'Service could not obtain schedule.';
 CONST.ERR_GETTING_COLOR_SCHEME = 'Service could not obtain color scheme.';
+CONST.ERR_WIDGET_COMPOSITION_FAILED = 'На жаль, не ўдалося карэктна завяршыць пабудову віджэта і вывесці расклад Святых Імш.';
 
 class API {
     async requestInfo(props) {
@@ -208,13 +209,20 @@ const ImshaBySchedule = class {
         this.srvr = undefined;
         this.colorStyle = undefined;
         this.navigation = undefined;
+        this.widgetCompositionFailed = false;
+        this.widgetCompositionFailedError = undefined;
     }
     async componentWillLoad() {
         this.srvr = new API();
-        await this.srvr.requestInfo({ parishId: this.getParishId() });
-        this.createColors({ colorScheme: this.srvr.getColorScheme(), colorSchemeHash: this.srvr.getColorSchemeHash() });
-        this.navigation = new DaysNavigation({ scheduleInfo: this.srvr.getScheduleInfo() });
-        console.info(this.navigation);
+        await this.srvr.requestInfo({ parishId: this.getParishId() })
+            .then(() => {
+            this.createColors({ colorScheme: this.srvr.getColorScheme(), colorSchemeHash: this.srvr.getColorSchemeHash() });
+            this.navigation = new DaysNavigation({ scheduleInfo: this.srvr.getScheduleInfo() });
+        })
+            .catch((error) => {
+            this.widgetCompositionFailed = true;
+            this.widgetCompositionFailedError = error;
+        });
     }
     getParishId() {
         return this.parishId;
@@ -251,10 +259,16 @@ const ImshaBySchedule = class {
       `;
     }
     render() {
+        if (this.widgetCompositionFailed) {
+            return (h(Fragment, null, h("style", null, `
+            .text-err {color: #8b0000;}
+            .errtype {color: #1e90ff;}
+            `), h("div", { class: "fw-bold text-err" }, CONST.ERR_WIDGET_COMPOSITION_FAILED, h("div", { class: "errtype" }, this.widgetCompositionFailedError.name, ": ", this.widgetCompositionFailedError.message))));
+        }
         let plateBraker = false;
-        return (h(Fragment, null, h("div", { key: 'f8b4eaff054b4e417fff3bbe38ccaee1e4457ab0', innerHTML: this.colorStyle }), h("div", { key: 'a703b1ce64103515b4d28ae2a6bc1d05ab42c3ea', class: "align-items-center" }, h("div", { key: 'f88817a2e7035916f78f34502073596df5fa085f', class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
+        return (h(Fragment, null, h("div", { innerHTML: this.colorStyle }), h("div", { class: "align-items-center" }, h("div", { class: "nav-pills nav-fill justify-content-center d-flex flex-row", id: "v-pills-tab", role: "tablist" }, this.navigation.daysNavs.map((el, i) => {
             return (h("day-plate", { class: 'nav-link', active: el.active, disabled: el.disabled, aria: el.aria, day: el.day, date: el.date, k: ++i }));
-        })), h("div", { key: '7b8c26936fb6b9102aa658a595d9cd617113c942', class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
+        })), h("div", { class: "tab-content", id: "v-pills-tabContent" }, this.navigation.daysNavs.map((el, i) => {
             let content = [];
             let psa = '';
             i++;
@@ -271,7 +285,7 @@ const ImshaBySchedule = class {
                 });
             }
             return (h("div", { class: `tab-pane fade ${psa} ${el.disabled}`, id: `v-pills-d${i}-tab`, "aria-labelledby": `v-pills-d${i}`, role: "tabpanel", tabindex: "0" }, h("div", { class: "accordion accordion-flush", id: `accordionFlush${i}` }, content)));
-        }))), h("script", { key: 'ddb5106f0811d7f32674e28e1b728fff29499c8a', src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossOrigin: 'anonymous' })));
+        }))), h("script", { src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossOrigin: 'anonymous' })));
     }
 };
 ImshaBySchedule.style = imshabyScheduleCss;

@@ -21,12 +21,21 @@ export class ImshaBySchedule {
   @State() private colorStyle: any;
   @State() private navigation: any;
 
+  @State() private widgetCompositionFailed: boolean = false;
+  @State() private widgetCompositionFailedError: Error;
+
   async componentWillLoad() {
     this.srvr = new API()
     await this.srvr.requestInfo({parishId: this.getParishId()})
-    this.createColors({colorScheme: this.srvr.getColorScheme(), colorSchemeHash: this.srvr.getColorSchemeHash()})
-    this.navigation = new DaysNavigation({scheduleInfo: this.srvr.getScheduleInfo()})
-    console.info(this.navigation)
+      .then(() => {
+        this.createColors({colorScheme: this.srvr.getColorScheme(), colorSchemeHash: this.srvr.getColorSchemeHash()})
+        this.navigation = new DaysNavigation({scheduleInfo: this.srvr.getScheduleInfo()})
+      })
+      .catch((error: Error) => {
+        this.widgetCompositionFailed = true
+        this.widgetCompositionFailedError = error
+      })
+
   }
 
   private getParishId() {
@@ -66,6 +75,25 @@ export class ImshaBySchedule {
   }
 
   render() {
+    if (this.widgetCompositionFailed) {
+      return (
+        <>
+          <style>
+            {`
+            .text-err {color: #8b0000;}
+            .errtype {color: #1e90ff;}
+            `}
+          </style>
+          <div class="fw-bold text-err">
+            {CONST.ERR_WIDGET_COMPOSITION_FAILED}
+            <div class="errtype">
+              {this.widgetCompositionFailedError.name}: {this.widgetCompositionFailedError.message}
+            </div>
+          </div>
+        </>
+      )
+    }
+    
     let plateBraker = false
     return (
       <>

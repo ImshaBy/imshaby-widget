@@ -10,4 +10,5 @@ export class CONST {
 
     static ERR_GETTING_SCHEDULE: string = 'Service could not obtain schedule.'
     static ERR_GETTING_COLOR_SCHEME: string = 'Service could not obtain color scheme.'
+    static ERR_WIDGET_COMPOSITION_FAILED: string = 'На жаль, не ўдалося карэктна завяршыць пабудову віджэта і вывесці расклад Святых Імш.'
 }
