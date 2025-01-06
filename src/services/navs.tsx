@@ -89,7 +89,6 @@ export class DaysNavigation {
           disabled: disabled,
         }
     })
-    console.log(this.daysNavs)
   }
 
 }
