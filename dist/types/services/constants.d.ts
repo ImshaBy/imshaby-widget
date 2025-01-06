@@ -1,6 +1,7 @@
 export declare class CONST {
     static API_MASS_URL: string;
     static API_COLOR_SCHEME_URL: string;
+    static API_COLOR_SCHEME_AUTHORIZATION_TOKEN: string;
     static TRUE: boolean;
     static FALSE: boolean;
     static NULL: any;
