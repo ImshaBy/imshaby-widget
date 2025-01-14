@@ -1,0 +1,19 @@
+{
+  "entries": [
+    "components/imshaby-schedule/imshaby-schedule.js",
+    "components/mass/mass-additional.js",
+    "components/mass/mass-footer.js",
+    "components/mass/mass-header.js",
+    "components/mass/mass-plate.js",
+    "components/mass/mass-slot.js",
+    "components/mass/no-mass.js",
+    "components/navs/days.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.22.3",
+    "typescriptVersion": "5.5.4"
+  },
+  "collections": [],
+  "bundles": []
+}
