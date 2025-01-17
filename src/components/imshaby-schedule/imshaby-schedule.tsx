@@ -99,6 +99,12 @@ export class ImshaBySchedule {
       <>
         <div innerHTML={this.colorStyle}></div>
 
+        <div>
+          <span id="brand-label">
+            Расклад Імшаў адлюстроўваецца пры дапамозе праекта <a href="https://imsha.by" target="_blank">imsha.by</a>!
+          </span>
+        </div>
+
         <div class="align-items-center">
           <div class="nav-pills nav-fill justify-content-center d-flex flex-row" id="v-pills-tab" role="tablist">
             {

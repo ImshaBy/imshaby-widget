@@ -3,4 +3,24 @@
   font-family: open_sansregular, sans-serif
 }
 
+
+#brand-label {  
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: none;
+  display: block;
+  line-height: 1.5;
+  text-align: left;
+  text-indent: 0;
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+#brand-label a {
+  color: rgba(28, 69, 135, 1);
+  text-decoration: underline;
+}
+
+
 @import url(bootstrap.min.css);

@@ -1,1 +1,10 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>ImshaBy Schedule Starter Example</title> <link rel="modulepreload" href="/build/p-9a126416.js"><link rel="modulepreload" href="/build/p-ce9281ba.js"><script type="module" src="/build/p-9a126416.js" data-stencil data-resources-url="/build/" data-stencil-namespace="imshaby-schedule"></script> <script nomodule="" src="/build/imshaby-schedule.js" data-stencil></script> </head> <body> <imshaby-schedule parish-id="Ou1SB9uLYST505PnQ8fjTG1pd8b0qWLrWMGcS7VFFt97PMNjXsQIIM6eg8ltHVio" expanded="false"></imshaby-schedule> </body></html>
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>ImshaBy Schedule Starter Example</title> <script type="module" src="/build/imshaby-schedule.esm.js" data-stencil></script> <script nomodule="" src="/build/imshaby-schedule.js" data-stencil></script> </head> <body> <imshaby-schedule parish-id="Ou1SB9uLYST505PnQ8fjTG1pd8b0qWLrWMGcS7VFFt97PMNjXsQIIM6eg8ltHVio" expanded="false"></imshaby-schedule> <script>
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  // auto-unregister service worker during dev mode
+  navigator.serviceWorker.getRegistration().then(function(registration) {
+    if (registration) {
+      registration.unregister().then(function() { location.reload(true) });
+    }
+  });
+}
+</script></body></html>
