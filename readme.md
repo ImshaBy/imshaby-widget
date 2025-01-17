@@ -11,8 +11,8 @@
     <head>
         ...
 
-        <script type="module" src="https://api.imsha.by/widget/build/imshaby-widget.esm.js"></script>
-        <script nomodule src="https://api.imsha.by/widget/build/imshaby-widget.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/imshaby-schedule@latest/dist/imshaby-schedule/imshaby-schedule.esm.js"></script>
+
 
         ...
     </head>
