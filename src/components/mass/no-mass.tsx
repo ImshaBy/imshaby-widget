@@ -12,7 +12,7 @@ export class NoMass {
     return (<>
 
       <div class="container-fluid mt-3">
-          <span class="spanRow">На гэты дзень Імш няма.</span>
+          <span class="spanRow">На гэты дзень Імшаў няма.</span>
       </div>
 
     </>)
